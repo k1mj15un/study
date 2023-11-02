@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 슬라이드</title>
+    <style>
+        .menu{
+            padding: 0;
+            list-style: none;
+            width: 200px;
+            text-align: center;
+        }
+        .menu li > a{
+            background-color: #000;
+            color: #fff;
+            display: block;
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+        .sub_menu{
+            border: 1px solid #000;
+            display: none;
+        }
+        .sub_menu a{
+            display: block;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>
+            <a href="#">MENU-1</a>
+            <div class="sub_menu">
+                <a href="#">SUBMENU-1</a>
+                <a href="#">SUBMENU-2</a>
+                <a href="#">SUBMENU-3</a>
+                <a href="#">SUBMENU-4</a>
+            </div>
+        </li>
+        <li>
+            <a href="#">MENU-2</a>
+            <div class="sub_menu">
+                <a href="#">SUBMENU-1</a>
+                <a href="#">SUBMENU-2</a>
+                <a href="#">SUBMENU-3</a>
+                <a href="#">SUBMENU-4</a>
+            </div>
+        </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('.menu li').mouseover(function(){
+                $(this).children('.sub_menu').stop().slideDown(); //this = 마우스호버된것만 선택
+            });
+            $('.menu li').mouseout(function(){
+                $(this).children('.sub_menu').stop().slideUp();
+            });
+        });
+    </script>
+</body>
+</html>
