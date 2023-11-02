@@ -4,4 +4,4 @@
 <br>
 <br>
 
-231102 : 제이쿼리 공부
+231102 : 제이쿼리 공부(slide-, fade-, addClass, removeClass, children, siblings, 메뉴 슬라이드다운-업)
