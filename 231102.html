@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            display: inline-block;
+            color: #000;
+            text-decoration: none;
+            background-color: #ddd;
+            width: 100px;
+            text-align: center;
+            padding: 5px;
+        }
+        .box{
+            background-color: dodgerblue;
+            height: 200px;
+            margin-top: 10px;
+            width: 230px;
+            color: #fff;
+            text-align: center;
+            line-height: 200;
+            display: none;
+        }
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1 -->
+    <!-- <a href="#" class="show_btn">보이기</a>
+    <a href="#" class="hide_btn">감추기</a>
+    <p>태그선택자 a를 클릭했습니다.</p> -->
+
+    <!-- 2 -->
+    <!-- <div class="container">
+        <a href="#" class="show_btn">보이기</a>
+        <a href="#" class="hide_btn">감추기</a>
+        <a href="#" class="toggle_btn">토글</a>
+        <div class="box">box</div>
+    </div> -->
+
+    <!-- 3 -->
+    <div class="container">
+        <a href="#" class="add_btn">보이기</a>
+        <a href="#" class="remove_btn">감추기</a>
+        <a href="#" class="toggle_btn">토글</a>
+        <div class="box">box</div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            // 1
+            /*
+            $('p').css({'display':'none'});
+
+            $('.show_btn').click(function(){
+                $('p').show();
+            });
+            $('.hide_btn').click(function(){
+                $('p').hide();
+            });
+            */
+
+            // 2
+            /*$('.show_btn').click(function(){
+                $('div').show();
+            });
+            ('.hide_btn').click(function(){
+                $('div').hide();
+            });*/
+
+            // 3
+            /*$('.show_btn').click(function(){
+                $('.box').slideDown(); //fadeIn('지속시간')
+            });
+            $('.hide_btn').click(function(){
+                $('.box').slideUp(); //fadeOut('지속시간') > 넣지 않으면 기본값 'fast', 'slow', 숫자로 넣을 땐 '' 없이
+            });
+            $('.toggle_btn').click(function(){
+                $('.box').slideToggle(); //fadeToggle('지속시간') >toggle = 넣고 빼기
+            });*/
+
+            // 4
+            $('.add_btn').click(function(){
+                $('.box').addClass('active');
+            });
+            $('.remove_btn').click(function(){
+                $('.box').removeClass('active');
+            });
+            $('.toggle_btn').click(function(){
+                $('.box').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
