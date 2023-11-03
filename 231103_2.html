@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도형 애니메이션</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .loading{
+            width: 50px;
+            height: 50px;
+            position: relative;
+        }
+        .loading span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background-color: gray;
+            animation: loading 1.5s infinite;
+        }
+        .loading span:nth-child(1){
+            background-color: cadetblue;
+        }
+        .loading span:nth-child(2){
+            animation-delay: 0.8s;
+        }
+
+        @keyframes loading{
+            0%{
+                top: 0;
+                left: 0;
+            }
+            25%{
+                top: 0;
+                left: calc(100% - 20px); /* right로 주면 인식을 못함 */
+                background-color: blue;
+            }
+            50%{
+                top: calc(100% - 20px);
+                left: calc(100% - 20px); 
+                background-color: orangered;
+            }
+            75%{
+                top: calc(100% - 20px);
+                left: 0;
+                background-color: wheat;
+            }
+            100%{
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="loading">
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

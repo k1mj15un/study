@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로딩 애니메이션 만들기</title>
+    <style>
+        body{
+            line-height: 1.5em;
+            margin: 0;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .loading span{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: gray;
+            border-radius: 50%;
+            animation: loading 1s 0s linear infinite; /* duration = 1s, delay = 0s, linear = 애니메이션이 부드럽게 넘어가게 설정 */
+        }
+        .loading span:nth-child(1){
+            animation-delay: 0s; /* 0s가 기본값 */
+            background-color: tomato;
+        }
+        .loading span:nth-child(2){
+            animation-delay: 0.2s;
+            background-color: steelblue;
+        }
+        .loading span:nth-child(3){
+            animation-delay: 0.4s;
+            background-color: palegreen;
+        }
+
+        @keyframes loading{
+            0%{
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100%{
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
