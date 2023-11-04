@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 네비게이션</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+        }
+        a{
+            color: #222; /* a 태그는 body 서식을 따르지 않는다. */
+            text-decoration: none;
+        }
+        .dropdown{
+            display: inline-block;
+            /* width: 200px; button은 기본으로 block 요소이기 때문에 width를 지정하지 않으면 100%이기 때문에 inline-block 이나 width값을 설정해주어야 함 */
+        }
+        .dropdown-btn{
+            width: 200px; /* inherit = 부모요소값을 상속받음*/
+            padding: 10px;
+            font-size: 18px;
+            background-color: #aeb3ff;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        .dropdown-submenu{
+            display: none;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.17);
+        }
+        .dropdown-submenu a{
+            display: block;
+            padding: 7px;
+            text-align: center;
+        }
+        .dropdown-submenu a:hover{
+            background-color: #dee0ff;
+        }
+        .dropdown:hover .dropdown-submenu{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropdown-btn">Real Estate Type</button>
+        <div class="dropdown-submenu">
+            <a href="#">All</a>
+            <a href="#">One room</a>
+            <a href="#">1.5 room</a>
+            <a href="#">Two room</a>
+            <a href="#">Three room</a>
+            <a href="#">Officetel</a>
+            <a href="#">Apartment</a>
+        </div>
+    </div>
+</body>
+</html>
