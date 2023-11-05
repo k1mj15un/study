@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover하면 나타나는 툴 팁 만들기</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .icon{
+            width: 125px;
+            height: 125px;
+            margin: 10px;
+            position: relative;
+        }
+        .icon span{
+            position: absolute;
+            background-color: #222;
+            color: #fff;
+            width: 300px;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%); /* 부모요소에 따라 상대적으로 이동 */
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            /* display: none; 자리뿐만 아니라 아예 사라지게 하는 것 */
+            opacity: 0; /* 트랜지션을 주기 위해 투명도로 설정 */
+            transition: 0.5s; 
+            /* 투명도를 0으로 안보이게 처리해줬지만 그 자리에 존재하기 때문에 말풍선 위치에 마우스를 갖다대면 말풍선이 나타나는 이슈 */
+            visibility: hidden; /* 자리값을 유지하되 존재 자체를 사라지게 //hidden과 visible 대신 pointer-events: none 사용해도 됨 */
+        }
+        .icon span::after{
+            content: '';
+            position: absolute;
+            background-color: #222;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            bottom: -5px;
+            left: 50%; /* transform : rotate를 두번 사용할 수 없음 */
+        }
+        .icon:hover span{
+            /* display: block; */
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-01.png" alt="">
+            <span>
+                This HTML tutorial contains hundreds of HTML examples.
+            </span>
+        </div>
+        <div class="icon">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-02.png" alt="">
+            <span>
+                This CSS tutorial contains hundreds of CSS examples.
+            </span>
+        </div>
+        <div class="icon">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-03.png" alt="">
+            <span>
+                This AngularJS tutorial contains hundreds of AngularJS examples.
+            </span>
+        </div>
+        <div class="icon">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-04.png" alt="">
+            <span>
+                This Node.js tutorial contains hundreds of Node.js examples.
+            </span>
+        </div>
+    </div>
+</body>
+</html>
