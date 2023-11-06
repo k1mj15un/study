@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보더 애니메이션 네비게이션 호버 이펙트</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+        .gnb{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 50px 30px;
+            display: flex;
+        }
+        .gnb li{
+            display: inline-block;
+            flex: 1;
+            text-align: center;
+            /* box-sizing: border-box;
+            float: left;
+            width: 120px;
+            text-align: center; */
+        }
+        .gnb li a{
+            font-size: 14px;
+            position: relative;
+        }
+        .gnb li a::before{
+            content: '';
+            position: absolute;
+            background-color: dodgerblue;
+            height: 2px;
+            width: 0;
+            bottom: -5px;
+            transition: 0.5s;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .gnb li a:hover::before{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul class="gnb">
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">SERVICE</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</body>
+</html>
