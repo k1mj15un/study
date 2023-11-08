@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>content attr을 활용한 텍스트 네비게이션</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(90deg, #DCE35B, #45B649);
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+        div{
+            margin: 50px;
+        }
+
+        /* gnb1 */
+        .gnb1{
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            padding-bottom: 10px;
+        }
+        .gnb1 a{
+            width: 80px;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gnb1 a span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+        }
+        .gnb1 a span:nth-child(1){
+            top: 0;
+            left: 0;
+        }
+        .gnb1 a span:nth-child(2){
+            top: 100%;
+            left: 0;
+            color: #45b649;
+        }
+        .gnb1 a:hover span:nth-child(1){
+            top: -100%;
+        }
+        .gnb1 a:hover span:nth-child(2){
+            top: 0;
+        }
+
+        /* gnb2 */
+        .gnb2{
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            padding-bottom: 10px;
+        }
+        .gnb2 a{
+            width: 80px;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gnb2 a::before, .gnb2 a::after{
+            content: attr(data-link); /* 속성 = property = attribute */
+            position: absolute;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .gnb2 a::before{
+            top: 0;
+            left: 0;
+        }
+        .gnb2 a::after{
+            top: 100%;
+            left: 0;
+            color: #45b649;
+        }
+        .gnb2 a:hover::before{
+            top: -100%;
+        }
+        .gnb2 a:hover::after{
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="gnb1">
+        <a href="#">
+            <span>메일</span>
+            <span>메일</span>
+        </a>
+        <a href="#">
+            <span>카페</span>
+            <span>카페</span>
+        </a>
+        <a href="#">
+            <span>블로그</span>
+            <span>블로그</span>
+        </a>
+        <a href="#">
+            <span>지식iN</span>
+            <span>지식iN</span>
+        </a>
+        <a href="#">
+            <span>쇼핑</span>
+            <span>쇼핑</span>
+        </a>
+        <a href="#">
+            <span>Pay</span>
+            <span>Pay</span>
+        </a>
+        <a href="#">
+            <span>사전</span>
+            <span>사전</span>
+        </a>
+        <a href="#">
+            <span>뉴스</span>
+            <span>뉴스</span>
+        </a>
+    </div>
+
+    <div class="gnb2">
+        <a href="#" data-link="메일"></a> <!--사용자정의속성이기 때문에 data-link말고도 원하는 이름 사용하면 된다. 일반적으로는 data-로 시작하고 상징적인 낱말을 뒤에 이어주면 된다.(단 띄어쓰기는 안됨)-->
+        <a href="#" data-link="카페"></a>
+        <a href="#" data-link="블로그"></a>
+        <a href="#" data-link="지식iN"></a>
+        <a href="#" data-link="쇼핑"></a>
+        <a href="#" data-link="Pay"></a>
+        <a href="#" data-link="사전"></a>
+        <a href="#" data-link="뉴스"></a>
+    </div>
+</body>
+</html>
