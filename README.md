@@ -11,6 +11,6 @@
 231106 : 위아래로 분리되는 네비게이션 호버 이펙트, 3d 호버 애니메이션, 가상요소(before, after)기본 사용법, 보더 애니메이션 네비게이션 호버 이펙트 <br>
 231107 : SNS 아이콘 애니메이션(before, transition, hover속성)<br>
 231108 : content attr을 활용한 텍스트 네비게이션 <br>
-231109 : <br>
+231109 : 폰트어썸 사용한 입력 필드(input, 인접선택자, focus), 애니메이션 스킬 프로그래스(keyframes, animation(delay), nth-child와 nth-of-type의 차이),  <br>
 231110 : <br>
 231111 : <br>
