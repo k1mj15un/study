@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 활용한 갤러리 이미지 어코디언 네비게이션</title>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+
+        .gallery{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        .gallery li{
+            border-right: 5px solid #000;
+            flex: 1;
+            transition: 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery li:last-child{
+            border-right: none;
+        }
+        .gallery li:nth-child(1){
+            background: url(./images/artistic-image-01.jpg);
+        }
+        .gallery li:nth-child(2){
+            background: url(./images/artistic-image-02.jpg);
+        }
+        .gallery li:nth-child(3){
+            background: url(./images/artistic-image-03.jpg);
+        }
+        .gallery li:nth-child(4){
+            background: url(./images/artistic-image-04.jpg);
+        }
+        .gallery li:nth-child(5){
+            background: url(./images/artistic-image-05.jpg);
+        }
+        .gallery:hover li{
+            flex: 1;
+        }
+        .gallery li:hover{
+            flex: 3;
+            filter: grayscale(1); /* 1 = 완전한 그레이 색상 */
+        }
+        .content{
+            position: absolute;
+            bottom: -300px;
+            height: 250px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            transition: 0.5s;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+        .content::before{
+            content: '';
+            position: absolute;
+            background-color: #000;
+            width: 100%;
+            height: 80px;
+            left: 0;
+            top: -10px;
+            transform: rotate(-3deg) scale(1.3);
+            transform-origin: left bottom; /* 어디를 기준으로 삼을건지 */
+        }
+        .sns a{
+            color: #333;
+        }
+        .gallery li:hover .content{
+            bottom: 0;
+            transition-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <ul class="gallery">
+        <li>
+            <div class="content">
+                <h2>Uploads made easy</h2>
+                <p>
+                    Use Spotify for Artists to upload your releases. 
+                    With previews and simple adits, you can control exactly how your music appears to divsteners.
+                </p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="content">
+                <h2>Uploads made easy</h2>
+                <p>
+                    Use Spotify for Artists to upload your releases. 
+                    With previews and simple adits, you can control exactly how your music appears to divsteners.
+                </p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="content">
+                <h2>Uploads made easy</h2>
+                <p>
+                    Use Spotify for Artists to upload your releases. 
+                    With previews and simple adits, you can control exactly how your music appears to divsteners.
+                </p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="content">
+                <h2>Uploads made easy</h2>
+                <p>
+                    Use Spotify for Artists to upload your releases. 
+                    With previews and simple adits, you can control exactly how your music appears to divsteners.
+                </p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="content">
+                <h2>Uploads made easy</h2>
+                <p>
+                    Use Spotify for Artists to upload your releases. 
+                    With previews and simple adits, you can control exactly how your music appears to divsteners.
+                </p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#"><i class="fa fa-google-plus-square"></i></a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
