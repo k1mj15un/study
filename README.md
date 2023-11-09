@@ -12,5 +12,5 @@
 231107 : SNS 아이콘 애니메이션(before, transition, hover속성)<br>
 231108 : content attr을 활용한 텍스트 네비게이션 <br>
 231109 : 폰트어썸 사용한 입력 필드(input, 인접선택자, focus), 애니메이션 스킬 프로그래스(keyframes, animation(delay), nth-child와 nth-of-type의 차이),  <br>
-231110 : <br>
+231110 : Flexbox 활용한 갤러리 이미지 어코디언 네비게이션(flex, transform-origin), <br>
 231111 : <br>
