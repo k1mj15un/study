@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭 콘텐츠 - Slide</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .tab-inner{
+            width: 300px;
+            height: 350px;
+        }
+        input[name=tabmenu]{
+            display: none;
+        }
+        .slide{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .slide-inner{
+            position: absolute;
+            width: 900px;
+            font-size: 0; /* 이미지 사이 간격이 없어짐 */
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+        }
+        .btn{
+            text-align: center; /* 슬라이드 안에 position 속성이 들어가있지 않아서 이렇게만 줘도 충분하다. */
+            margin-top: 10px;
+        }
+        .btn label{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: lightgray;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        input[id=tab1]:checked ~ .slide .slide-inner{
+            left: 0;
+        }
+        input[id=tab2]:checked ~ .slide .slide-inner{
+            left: -300px;
+        }
+        input[id=tab3]:checked ~ .slide .slide-inner{
+            left: -600px;
+        }
+
+        input[id=tab1]:checked ~ .btn label[for=tab1],
+        input[id=tab2]:checked ~ .btn label[for=tab2],
+        input[id=tab3]:checked ~ .btn label[for=tab3]{
+            background-color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-inner">
+        <input type="radio" name="tabmenu" id="tab1" checked>
+        <input type="radio" name="tabmenu" id="tab2">
+        <input type="radio" name="tabmenu" id="tab3">
+        <div class="slide">
+            <div class="slide-inner">
+                <a href="#">
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/22.확장선택자와 함께 가상클래스 checked 실전 퍼블리싱 06(탭 콘텐츠 만들기 - Slide)/images/slide-01.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/22.확장선택자와 함께 가상클래스 checked 실전 퍼블리싱 06(탭 콘텐츠 만들기 - Slide)/images/slide-02.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/22.확장선택자와 함께 가상클래스 checked 실전 퍼블리싱 06(탭 콘텐츠 만들기 - Slide)/images/slide-03.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="btn">
+            <label for="tab1"></label>
+            <label for="tab2"></label>
+            <label for="tab3"></label>
+        </div>
+    </div>
+</body>
+</html>

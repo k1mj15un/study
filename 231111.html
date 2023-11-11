@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭 메뉴 콘텐츠 만들기</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .tab-inner{
+            width: 300px;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+        input[name=tabmenu]{
+            display: none;
+        }
+        .content{
+            /* display: none; */
+            position: absolute;
+            top: 0;
+            left: -50px;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s;
+        }
+        .btn{
+            position: absolute; /* position을 absolute로 주면서 display:block >> inline-block으로 바뀜 그래서 width:100%으로 바꿔준 다음에 text-align:center를 해주면 가운데 정렬된다. */
+            text-align: center;
+            width: 100%;
+            bottom: 10px;
+        }
+        .btn label{
+            width: 15px;
+            height: 15px;
+            background-color: lightgray;
+            display: inline-block;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        input[id=tab1]:checked ~ .slide1,
+        input[id=tab2]:checked ~ .slide2,
+        input[id=tab3]:checked ~ .slide3{
+            /* display: block; */
+            opacity: 1;
+            visibility: visible;
+            left: 0;
+        }
+        input[id=tab1]:checked ~ .btn label[for=tab1]{
+            background-color: crimson;
+        }
+        input[id=tab2]:checked ~ .btn label[for=tab2]{
+            background-color: crimson;
+        }
+        input[id=tab3]:checked ~ .btn label[for=tab3]{
+            background-color: crimson;
+        }
+
+        .text1, .text2, .text3{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: crimson;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            font-weight: bold;
+            padding-top: 25px;/* 두줄은 line-height 주면 안됨 */
+            box-sizing: border-box;
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .text1 span, .text2 span, .text3 span{
+            font-size: 20px;
+            display: block;
+            margin-top: 5px;
+        }
+        .text2{
+            background-color: dodgerblue;
+        }
+        .text3{
+            background-color: yellowgreen;
+        }
+
+        input[id=tab1]:checked ~ .heading .text1,
+        input[id=tab2]:checked ~ .heading .text2,
+        input[id=tab3]:checked ~ .heading .text3{
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab-inner">
+        <input type="radio" name="tabmenu" id="tab1" checked> <!--다중 선택되는 게 아니기 때문에 radio, 최초에 하나는 checked되어있어야 함-->
+        <input type="radio" name="tabmenu" id="tab2">
+        <input type="radio" name="tabmenu" id="tab3">
+        <div class="content slide1">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/19.확장선택자와 함께 가상클래스 checked 실전 퍼블리싱 03(탭 메뉴 콘텐츠 만들기)/images/slide-01.jpg" alt="">
+        </div>
+        <div class="content slide2">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/19.확장선택자와 함께 가상클래스 checked 실전 퍼블리싱 03(탭 메뉴 콘텐츠 만들기)/images/slide-02.jpg" alt="">
+        </div>
+        <div class="content slide3">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/19.확장선택자와 함께 가상클래스 checked 실전 퍼블리싱 03(탭 메뉴 콘텐츠 만들기)/images/slide-03.jpg" alt="">
+        </div>
+        <div class="heading">
+            <div class="text1">
+                Sale <span>50%</span>
+            </div>
+            <div class="text2">
+                Sale <span>40%</span>
+            </div>
+            <div class="text3">
+                Sale <span>30%</span>
+            </div>
+        </div>
+        <div class="btn">
+            <label for="tab1"></label> <!-- input과 페어링 시키기 위해 -->
+            <label for="tab2"></label>
+            <label for="tab3"></label>
+        </div>
+    </div>
+</body>
+</html>
