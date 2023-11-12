@@ -14,7 +14,7 @@
 231109 : 폰트어썸 사용한 입력 필드(input, 인접선택자, focus), 애니메이션 스킬 프로그래스(keyframes, animation(delay), nth-child와 nth-of-type의 차이),  <br>
 231110 : Flexbox 활용한 갤러리 이미지 어코디언 네비게이션(flex, transform-origin), 애니메이션 햄버거 버튼 만들기(input, label), 탭 메뉴 콘텐츠 만들기 <br>
 231111 : 탭 메뉴 응용, 탭 슬라이드 응용<br>
-231112 : 탭 슬라이드 응용, 호버 이펙트, <br>
+231112 : 탭 슬라이드 응용, 호버 이펙트(border, attr, rotate), 라디오버튼과 체크박스 <br>
 231113 : <br>
 231114 : <br>
 231115 : <br>
