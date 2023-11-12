@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오버튼과 체크박스를 커스텀 체크박스로 스타일링</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+        div{
+            margin: 30px;
+        }
+
+        .custom input[type=checkbox]{
+            display: none;
+        }
+        .custom label em{
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            background: url(./images/checkbox-01.png) no-repeat;
+            background-position: left center;
+        }
+        .custom input[type=checkbox]:checked + label em{
+            background-position: right center;
+        }
+
+        .grade input[type=radio]{
+            display: none;
+        }
+        .grade label{
+            cursor: pointer;
+        }
+        .grade label em{
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 5px;
+            background: url(./images/radio-01.png) no-repeat;
+            background-position: left center;
+        }
+        .grade input[type=radio]:checked + label em{
+            background-position: right center;
+        }
+        .grade input[type=radio]:checked + label{
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom">
+        <input type="checkbox" id="chk"><label for="chk"><em></em>약관을 충분히 이해하였으며 동의 합니다.</label>
+    </div>
+    <div class="grade">
+        <input type="radio" name="grade" id="grade-chk1"><label for="grade-chk1"><em></em>초등학생</label>
+        <input type="radio" name="grade" id="grade-chk2"><label for="grade-chk2"><em></em>중학생</label>
+        <input type="radio" name="grade" id="grade-chk3"><label for="grade-chk3"><em></em>고등학생</label>
+        <input type="radio" name="grade" id="grade-chk4"><label for="grade-chk4"><em></em>대학생</label>
+    </div>
+</body>
+</html>
