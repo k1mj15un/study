@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션 호버이펙트 - content attr</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+
+        .gnb a{
+            position: relative;
+            width: 300px;
+            height: 40px;
+            display: block;
+            overflow: hidden;
+        }
+        .gnb a::before,
+        .gnb a::after{
+            content: attr(data-text);
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            text-align: center;
+            color: #fff;
+            line-height: 40px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .gnb a::before{
+            background-color: crimson;
+            top: 0;
+        }
+        .gnb a::after{
+            background-color: royalblue;
+            top: 100%; /* top:40px과 같음 */
+        }
+
+        .gnb a:hover::before{
+            top: -100%;
+        }
+        .gnb a:hover::after{
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <a href="#" data-text="CodingWorks Online Class"></a>
+    </div>
+</body>
+</html>

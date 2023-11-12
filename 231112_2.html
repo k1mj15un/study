@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션 호버이펙트 - Border</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+        
+        .gnb a{
+            position: relative;
+            display: block;
+            padding-bottom: 5px;
+            margin: 15px;
+        }
+
+        /* 1 */
+        .gnb a:nth-child(1):before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            background-color: crimson;
+            height: 2px;
+            width: 0;
+            transition: 0.3s;
+        }
+        .gnb a:nth-child(1):hover:before{
+            width: 100%;
+        }
+
+        /* 2 */
+        .gnb a:nth-child(2):before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            background-color: crimson;
+            height: 2px;
+            width: 0;
+            transition: 0.3s;
+            right: 0;
+        }
+        .gnb a:nth-child(2):hover:before{
+            width: 100%;
+        }
+
+        /* 3 */
+        .gnb a:nth-child(3):before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            background-color: crimson;
+            height: 2px;
+            width: 4px;
+            transition: 0.3s;
+            left: 0;
+        }
+        .gnb a:nth-child(3):hover:before{
+            left: calc(100% - 4px); /* 위에서 left로 했기때문에 right로 하면 페어링이 안된다. */
+        }
+
+        /* 4 */
+        .gnb a:nth-child(4):before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            background-color: crimson;
+            height: 2px;
+            width: 0;
+            transition: 0.3s;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .gnb a:nth-child(4):hover:before{
+            width: 100%;
+        }
+
+        /* 5 */
+        .gnb a:nth-child(5):before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            background-color: crimson;
+            height: 2px;
+            width: 100%;
+            transition: 0.3s;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .gnb a:nth-child(5):hover:before{
+            width: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <a href="#">CodingWorks Online Class</a>
+        <a href="#">CodingWorks Online Class</a>
+        <a href="#">CodingWorks Online Class</a>
+        <a href="#">CodingWorks Online Class</a>
+        <a href="#">CodingWorks Online Class</a>
+    </div>
+</body>
+</html>

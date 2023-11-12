@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀스크린 탭 콘텐츠 슬라이더 응용</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        input[name=tabmenu]{
+            display: none;
+        }
+        .tabs{
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            /* 기본적으로 block요소라 100%이기 때문에 width값을 넣지 않아도 된다. */
+        }
+        .items{
+            width: 300%;
+            height: 100vh;
+            transition: 0.5s;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .items div{
+            position: relative;
+            float: left;
+            width: 33.3333%; /* 100%가 아님 */
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .items div:nth-child(1){
+            background: url(./images/photo-01.jpg) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed; /*이미지는 고정되어있고 컨텐츠만 바뀌는 것처럼 보이는 효과를 줄 수 있음 */
+        }
+        .items div:nth-child(2){
+            background: url(./images/photo-02.jpg) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .items div:nth-child(3){
+            background: url(./images/photo-03.jpg) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .items div:nth-child(1)::before,
+        .items div:nth-child(2)::before,
+        .items div:nth-child(3)::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .items div:nth-child(1)::before{
+            background: linear-gradient(130deg, gold, transparent);
+        }
+        .items div:nth-child(2)::before{
+            background: linear-gradient(130deg, crimson, transparent);
+        }
+        .items div:nth-child(3)::before{
+            background: linear-gradient(130deg, royalblue, transparent);
+        }
+        .items div h1{
+            font-size: 120px;
+            font-weight: normal;
+            color: #fff;
+            position: relative; /* 글씨를 위로 올릴 수 있음 단 z-index를 주지 않았다는 전제 하에 가능 */
+            text-align: center;
+            transform: translateY(-200px);
+            opacity: 0;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+
+        .btn{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .btn label{
+            display: inline-block;
+            cursor: pointer;
+            color: #fff;
+            margin: 0 15px;
+        }
+
+        input[id=tab1]:checked ~ .tabs .items{
+            left: 0;
+        }
+        input[id=tab2]:checked ~ .tabs .items{
+            left: -100%;
+        }
+        input[id=tab3]:checked ~ .tabs .items{
+            left: -200%;
+        }
+
+        input[id=tab1]:checked ~ .btn label[for=tab1],
+        input[id=tab2]:checked ~ .btn label[for=tab2],
+        input[id=tab3]:checked ~ .btn label[for=tab3]{
+            color: crimson;
+            font-weight: 500;
+        }
+
+        input[id=tab1]:checked ~ .tabs .items div:nth-child(1) h1,
+        input[id=tab2]:checked ~ .tabs .items div:nth-child(2) h1,
+        input[id=tab3]:checked ~ .tabs .items div:nth-child(3) h1{
+            transform: translateY(200px);
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tab-inner">
+        <input type="radio" name="tabmenu" id="tab1" checked>
+        <input type="radio" name="tabmenu" id="tab2">
+        <input type="radio" name="tabmenu" id="tab3">
+        <div class="tabs">
+            <div class="items">
+                <div>
+                    <h1>Slide Content 01</h1>
+                </div>
+                <div>
+                    <h1>Slide Content 02</h1>
+                </div>
+                <div>
+                    <h1>Slide Content 03</h1>
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <label for="tab1">Graphic</label>
+            <label for="tab2">Web Publishing</label>
+            <label for="tab3">Logo & CI</label>
+        </div>
+    </div>
+</body>
+</html>
