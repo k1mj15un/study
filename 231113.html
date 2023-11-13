@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오버튼과 체크박스를 커스텀 체크박스로 스타일링 (폰트어썸 아이콘을 사용)</title>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form input[type=checkbox]{
+            display: none;
+        }
+        form label{
+            display: block;
+        }
+        form label::before{
+            content: '\f00c';
+            font-family: fontawesome;
+            border: 1px solid #333;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            margin-right: 5px;
+            font-size: 13px;
+            font-weight: bold;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 16px;
+            color: transparent;
+            transition: 0.2s;
+        }
+
+        form input[type=checkbox]:checked + label::before{
+            background-color: crimson;
+            color: #fff;
+            border-color: transparent;
+        }
+        form input[type=checkbox]:checked + label:active::before{
+            transform: scale(0);
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="checkbox" id="chk1">
+        <label for="chk1">HTML</label>
+        <input type="checkbox" id="chk2">
+        <label for="chk2">CSS</label>
+        <input type="checkbox" id="chk3">
+        <label for="chk3">jQuery</label>
+        <input type="checkbox" id="chk4">
+        <label for="chk4">UIKit</label>
+    </form>
+</body>
+</html>

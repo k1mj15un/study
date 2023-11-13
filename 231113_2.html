@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순서 체크 가상클래스 활용한 실전 예제 제작 (개인 프로필 카드 UI 호버 이펙트)</title>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+
+        .container{
+            display: flex;
+        }
+        .card{
+            position: relative;
+            margin: 10px;
+            width: 300px;
+            height: 400px;
+            overflow: hidden;
+            transition: 0.5s;
+            border-radius: 5px;
+        }
+        .card:nth-child(1) .content{
+            background: linear-gradient(to top, crimson, transparent);
+        }
+        .card:nth-child(2) .content{
+            background: linear-gradient(to top, dodgerblue, transparent);
+        }
+        .card:nth-child(3) .content{
+            background: linear-gradient(to top, yellowgreen, transparent);
+        }
+        .content{
+            position: absolute; /* position absolute를 주면 inline-block이 된다. width, height를 다시 지정해주어야 함 */
+            top: 100%;
+            left: 0;
+            width: inherit;
+            height: inherit;
+            padding: 20px;
+            box-sizing: border-box;
+            color: #fff;
+            text-align: center;
+            padding-top: 150px;
+            transition: 0.5s;
+        }
+        .content h2{
+            font-size: 30px;
+        }
+        .content h2 span{
+            display: block;
+            font-size: 14px;
+            color: gold;
+            margin-top: 10px;
+        }
+        .sns a{
+            color: #fff;
+            border: 1px solid #fff;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            font-size: 13px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .card:hover .content{
+            top: 0;
+        }
+        .card:hover{
+            transform: translateY(-20px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 2)/07.순서 체크 가상클래스 활용한 실전 예제 제작 (개인 프로필 카드 UI 호버 이펙트)/images/crew-01.jpg" alt="">
+            <div class="content">
+                <h2>Andrew Yu <span>Developer</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A non eum quasi necessitatibus voluptas distinctio.</p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 2)/07.순서 체크 가상클래스 활용한 실전 예제 제작 (개인 프로필 카드 UI 호버 이펙트)/images/crew-02.jpg" alt="">
+            <div class="content">
+                <h2>Monica Jung <span>Designer</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A non eum quasi necessitatibus voluptas distinctio.</p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 2)/07.순서 체크 가상클래스 활용한 실전 예제 제작 (개인 프로필 카드 UI 호버 이펙트)/images/crew-03.jpg" alt="">
+            <div class="content">
+                <h2>James Lee <span>Planner</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A non eum quasi necessitatibus voluptas distinctio.</p>
+                <div class="sns">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

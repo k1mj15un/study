@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 가상클래스를 활용한 실전 퍼블리싱 (배경 이미지 풀스크린 검색창)</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            background: url(./images/snow-photo.jpg) no-repeat center center fixed;
+            /* background-image: url(./images/snow-photo.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed; 가로세로 비율을 무시한 채 배경이미지가 가득차게 */
+        }
+        body::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+        .search{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .search h1{
+            color: #fff;
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 30px;
+            font-size: 36px;
+        }
+        .search input{
+            padding: 20px;
+            border: none;
+            outline: none; /* 클릭했을 때 아웃라운이 나타나지 않게 */
+            box-sizing: border-box;
+        }
+        .search input[type=text]{
+            width: 350px;
+            margin-right: -6px;
+            border-radius: 40px 0 0 40px;
+            padding-left: 40px;
+        }
+        .search input[type=submit]{
+            width: 150px;
+            border-radius: 0 40px 40px 0;
+            background-color: orange;
+            color: #fff;
+            cursor: pointer;
+        }
+        .search input[type=submit]:hover{
+            background-color: darkgoldenrod;
+        }
+        .search input[type=text]::placeholder{
+            font-size: 20px;
+            font-style: italic;
+        }
+        .search input[type=text]:focus::placeholder{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <form class="search">
+        <h1>What are you looking for?</h1>
+        <input type="text" placeholder="Type...">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
