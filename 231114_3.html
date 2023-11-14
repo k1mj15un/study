@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>자바스크립트 변수와 조건문을 이용한 별점 주기</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+
+        .star-rating{
+            background-color: #333;
+            width: 250px;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .star-rating div{
+            float: left;
+            width: 50%;
+        }
+        .stars .fa{
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .stars .fa.active{
+            color: yellow;
+            text-shadow: 0 0 5 yellow;
+        }
+        .print{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="star-rating">
+        <div class="stars">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+        </div>
+        <div class="print">
+            벌점 주세용
+        </div>
+    </div>
+
+    <script>
+        $('.stars .fa').click(function(){
+            $(this).addClass('active');
+            $(this).prevAll().addClass('active');
+            $(this).nextAll().removeClass('active');
+
+            var num = $(this).index(); //index=순서
+            var starRate = num + 1;
+
+            if(starRate == 1){
+                $('.print').text('별로예요');
+            }
+            else if(starRate == 2){
+                $('.print').text('그냥 그래요');
+            }
+            else if(starRate == 3){
+                $('.print').text('보통이에요');
+            }
+            else if(starRate == 4){
+                $('.print').text('맘에 들어요');
+            }
+            else{
+                $('.print').text('아주 좋아요');
+            }
+        });
+    </script>
+</body>
+</html>
