@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴 콘텐츠(jQuery)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #eee;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+
+        .testimonial-section{
+            width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+        .testimonial-section h1{
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+        .testimonial-section h1 span{
+            color: crimson;
+        }
+        .testimonial-pic img{
+            width: 100px;
+            filter: grayscale(1);
+            margin: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .testimonial-pic img.active{
+            border-radius: 50%;
+            filter: grayscale(0);
+        }
+        .testimonial .content{
+            display: none;
+        }
+        .testimonial .content p:nth-child(2){
+            font-weight: bold;
+        }
+        .testimonial .content.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="testimonial-section">
+        <h1><span>CodingWorks</span> Publishing Online Class with Inflearn</h1>
+        <div class="testimonial-pic">
+            <img class="active" src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/01) 탭 메뉴 콘텐츠- 스타일 01 with jQuery/images/face-01.jpg" data-alt="tab1">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/01) 탭 메뉴 콘텐츠- 스타일 01 with jQuery/images/face-02.jpg" data-alt="tab2">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/01) 탭 메뉴 콘텐츠- 스타일 01 with jQuery/images/face-03.jpg" data-alt="tab3">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/01) 탭 메뉴 콘텐츠- 스타일 01 with jQuery/images/face-04.jpg" data-alt="tab4">
+        </div>
+        <div class="testimonial">
+            <div class="content active" id="tab1">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ex aliquid et tempore molestias qui cupiditate veritatis soluta 
+                    quae ipsa eveniet nihil id ut facere consequatur ducimus? Culpa maxime ratione asperiores pariatur eaque sit atque laborum consequatur 
+                    soluta reprehenderit accusantium, nobis mollitia itaque non incidunt autem expedita nisi ipsam eveniet cum voluptas a dolorem? Magni, 
+                    ipsam magnam? Beatae officiis modi mollitia minus fugiat veniam ipsum dolorem asperiores porro! Consequuntur perspiciatis harum nulla 
+                    cum architecto voluptatem, ipsa tenetur veritatis. Aspernatur, consequatur.
+                </p>
+                <p>Sally, web Designer</p>
+            </div>
+            <div class="content" id="tab2">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, omnis architecto sequi id velit animi quas libero labore numquam repudiandae 
+                    repellat quos asperiores necessitatibus quo ipsa, pariatur maxime laborum officia ut ratione modi tenetur. Eaque eum mollitia nam hic placeat 
+                    incidunt earum at laudantium! Suscipit, recusandae cumque? Maxime excepturi est officia nam minima cum ipsum harum, culpa vitae magni rem! 
+                    Maxime officiis quo similique dolorem praesentium iure iusto voluptates. Fugit dicta, veritatis voluptas error odit quidem eveniet at doloribus vero.
+                </p>
+                <p>Amy, Graphic Designer</p>
+            </div>
+            <div class="content" id="tab3">
+                <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis commodi quo ut sequi quia in deleniti perferendis quod a quis et quas dolor 
+                    doloremque, architecto vel, porro placeat voluptas eaque accusantium inventore iusto! Id dolorem error dolorum sapiente molestias laudantium tempore 
+                    neque sint, ab vitae labore, soluta dignissimos sunt necessitatibus quos. Nemo temporibus ipsam nisi vel enim. Nostrum exercitationem suscipit dolorum 
+                    a iusto sit consequuntur odit! Voluptatibus dolore amet corporis molestiae totam laudantium. Corporis, quis ducimus. Deleniti quasi perferendis ratione.
+                </p>
+                <p>Jung Ho, Developer</p>
+            </div>
+            <div class="content" id="tab4">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quibusdam, voluptatem molestiae recusandae, distinctio minima eius esse error officia impedit maiores. 
+                    Blanditiis reiciendis laborum ipsa, soluta unde dicta similique! Ad eligendi ex cumque nostrum perspiciatis, iste voluptatem aperiam voluptatum dolorem 
+                    repellendus recusandae, aut inventore, nihil aspernatur at distinctio optio deserunt impedit. Aut et molestias expedita at ea voluptas repellat consequatur 
+                    iste nobis. Omnis nemo illum laudantium repellat minus ut aspernatur veritatis. Alias perspiciatis explicabo quod quos voluptatem, commodi magni ad!
+                </p>
+                <p>Chris, Printing Designer</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.testimonial-pic img').click(function(){
+                $(this).addClass('active');
+                $(this).siblings().removeClass('active');
+                $('.testimonial .content').removeClass('active');
+                $('#' + $(this).attr('data-alt')).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
