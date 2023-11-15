@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴 콘텐츠</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ededed;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+
+        section{
+            width: 800px;
+        }
+
+        .heading h1{
+            font-size: 30px;
+            text-align: center;
+        }
+        .heading h1 span{
+            color: crimson;
+        }
+        .heading input[type=text]{
+            background: #fff url(./images/search-icon.png) no-repeat center left 5px;
+            background-size: 23px;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            outline: none;
+            padding-left: 35px;
+        }
+        .heading input[type=text]::placeholder{
+            font-style: italic;
+            color: #8e8e8e;
+        }
+        .heading input[type=text]:focus::placeholder{
+            visibility: hidden;
+        }
+
+        .tab-inner{
+            margin-top: 30px;
+        }
+        .btn{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden; /* 높이값 설정할 것 없이 자연스럽게 높이값을 찾아준다. */
+        }
+        .btn li{
+            float: left;
+            border-right: 1px solid #ddd;
+            background-color: #eee;
+            padding: 5px;
+            width: 120px;
+            text-align: center;
+            cursor: pointer;
+            border-top: 2px solid transparent;
+        }
+        .btn li:last-child{
+            width: 170px;
+            border-right: none;
+        }
+        .btn li:hover,
+        .btn li.active{
+            background-color: #fff;
+            border-top: 2px solid crimson;
+        }
+
+        .tabs div{
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none;
+        }
+        .tabs div h2{
+            text-align: center;
+        }
+        .tabs div img{
+            float: left;
+            margin-right: 10px;
+        }
+        .tabs div p{
+            overflow: hidden;
+        }
+        .tabs div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="heading">
+            <h1><span>코딩웍스</span>, 프론트엔드 퍼블리셔 취업을 위한 실전 퍼블리싱 강좌</h1>
+            <input type="text" placeholder="What are yhou looking for?">
+        </div>
+        <div class="tab-inner">
+            <ul class="btn">
+                <li data-alt="tab1" class="active">HTML5</li>
+                <li data-alt="tab2">CSS3</li>
+                <li data-alt="tab3">JQUERY</li>
+                <li data-alt="tab4">JAVASCRIPT</li>
+                <li data-alt="tab5">CSS FRAMEWORKS</li>
+            </ul>
+            <div class="tabs">
+                <div id="tab1" class="active">
+                    <h2>HTML5</h2>
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/04) 탭 메뉴 콘텐츠- 스타일 02 with jQuery/images/platform-logo-01.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et id ducimus quia iste quos reiciendis facilis. Laborum pariatur vitae impedit et nam, 
+                        laudantium, iure tempore neque maxime dolore inventore cum ut. Cum iure dolorem cumque dignissimos dolores laborum quisquam commodi necessitatibus 
+                        nemo dolor eum ea natus quis quo, libero doloribus? Culpa, incidunt soluta nihil non porro expedita assumenda necessitatibus officia tenetur beatae 
+                        libero dolorem ipsam dolores autem excepturi recusandae magnam magni repellat. Quibusdam nemo vero iusto tempore harum voluptatum ratione sint 
+                        ullam magnam. Repudiandae porro distinctio quasi, quibusdam non obcaecati aperiam doloribus soluta officiis dicta ducimus, vitae tempora! Totam, officiis!</p>
+                </div>
+                <div id="tab2">
+                    <h2>CSS3</h2>
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/04) 탭 메뉴 콘텐츠- 스타일 02 with jQuery/images/platform-logo-02.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et id ducimus quia iste quos reiciendis facilis. Laborum pariatur vitae impedit et nam, 
+                        laudantium, iure tempore neque maxime dolore inventore cum ut. Cum iure dolorem cumque dignissimos dolores laborum quisquam commodi necessitatibus 
+                        nemo dolor eum ea natus quis quo, libero doloribus? Culpa, incidunt soluta nihil non porro expedita assumenda necessitatibus officia tenetur beatae 
+                        libero dolorem ipsam dolores autem excepturi recusandae magnam magni repellat. Quibusdam nemo vero iusto tempore harum voluptatum ratione sint 
+                        ullam magnam. Repudiandae porro distinctio quasi, quibusdam non obcaecati aperiam doloribus soluta officiis dicta ducimus, vitae tempora! Totam, officiis!</p>
+                </div>
+                <div id="tab3">
+                    <h2>JQUERY</h2>
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/04) 탭 메뉴 콘텐츠- 스타일 02 with jQuery/images/platform-logo-03.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et id ducimus quia iste quos reiciendis facilis. Laborum pariatur vitae impedit et nam, 
+                        laudantium, iure tempore neque maxime dolore inventore cum ut. Cum iure dolorem cumque dignissimos dolores laborum quisquam commodi necessitatibus 
+                        nemo dolor eum ea natus quis quo, libero doloribus? Culpa, incidunt soluta nihil non porro expedita assumenda necessitatibus officia tenetur beatae 
+                        libero dolorem ipsam dolores autem excepturi recusandae magnam magni repellat. Quibusdam nemo vero iusto tempore harum voluptatum ratione sint 
+                        ullam magnam. Repudiandae porro distinctio quasi, quibusdam non obcaecati aperiam doloribus soluta officiis dicta ducimus, vitae tempora! Totam, officiis!</p>
+                </div>
+                <div id="tab4">
+                    <h2>JAVASCRIPT</h2>
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/04) 탭 메뉴 콘텐츠- 스타일 02 with jQuery/images/platform-logo-04.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et id ducimus quia iste quos reiciendis facilis. Laborum pariatur vitae impedit et nam, 
+                        laudantium, iure tempore neque maxime dolore inventore cum ut. Cum iure dolorem cumque dignissimos dolores laborum quisquam commodi necessitatibus 
+                        nemo dolor eum ea natus quis quo, libero doloribus? Culpa, incidunt soluta nihil non porro expedita assumenda necessitatibus officia tenetur beatae 
+                        libero dolorem ipsam dolores autem excepturi recusandae magnam magni repellat. Quibusdam nemo vero iusto tempore harum voluptatum ratione sint 
+                        ullam magnam. Repudiandae porro distinctio quasi, quibusdam non obcaecati aperiam doloribus soluta officiis dicta ducimus, vitae tempora! Totam, officiis!</p>
+                </div>
+                <div id="tab5">
+                    <h2>CSS FRAMEWORKS</h2>
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/04) 탭 메뉴 콘텐츠- 스타일 02 with jQuery/images/platform-logo-05.png" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et id ducimus quia iste quos reiciendis facilis. Laborum pariatur vitae impedit et nam, 
+                        laudantium, iure tempore neque maxime dolore inventore cum ut. Cum iure dolorem cumque dignissimos dolores laborum quisquam commodi necessitatibus 
+                        nemo dolor eum ea natus quis quo, libero doloribus? Culpa, incidunt soluta nihil non porro expedita assumenda necessitatibus officia tenetur beatae 
+                        libero dolorem ipsam dolores autem excepturi recusandae magnam magni repellat. Quibusdam nemo vero iusto tempore harum voluptatum ratione sint 
+                        ullam magnam. Repudiandae porro distinctio quasi, quibusdam non obcaecati aperiam doloribus soluta officiis dicta ducimus, vitae tempora! Totam, officiis!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $('.btn li').click(function(){
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+
+            var tab = $(this).attr('data-alt');
+            $('.tabs div').removeClass('active');
+            $('#' + tab).addClass('active');
+        })
+    </script>
+</body>
+</html>
