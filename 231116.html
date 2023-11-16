@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ui호버이펙트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #eee;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-weight: normal;
+        }
+
+        .item{
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
+        }
+        .item img{
+            transition: 0.5s;
+        }
+        .detail{
+            position: absolute; /* absolute값을 주면서 inline-block으로 속성이 바뀜 */
+            bottom: -177px;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            background-color: #f8f8f8;
+            transition: 0.5s;
+            padding: 5px 20px; /* h2가 원래 가지고 있는 마진이 있기 때문에 상하여백은 주지 않아도 된다. */
+            box-sizing: border-box;
+        }
+        .item:hover .detail{
+            bottom: 0;
+        }
+        .item:hover img {
+            filter: blur(2px)
+        }
+
+        .title{
+            border-bottom: 1px solid #ddd;
+            overflow: hidden; /*자식요소가 float값을 가지고 있어서 부모요소가 높이값을 잃었기 때문에 */
+            margin-bottom: 15px;
+        }
+        .title h2{
+            font-size: 16px;
+            color: #888;
+            line-height: 1.2em;
+            float: left;
+        }
+        .title h2 em{
+            font-style: normal;
+            display: block;
+            margin-bottom: 5px;
+            color: #000;
+            font-size: 20px;
+        }
+        .title span{
+            float: right;
+            margin-top: 15px;
+            font-size: 20px;
+            color: crimson;
+        }
+
+        .info{
+            position: relative;
+        }
+
+        .size{
+            margin-bottom: 10px;
+        }
+        .size label,
+        .color label{
+            display: block;
+            margin-bottom: 5px;
+        }
+        .size span{
+            font-size: 12px;
+            margin-right: 4px;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+            padding: 3px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .size span.active{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .color span.active,
+        .size span.active{
+            transition: 0.3s;
+        }
+
+        .color span{
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            margin-right: 6px;
+            cursor: pointer;
+        }
+        .color span:nth-of-type(1){
+            background-color: #808000;
+        }
+        .color span:nth-of-type(2){
+            background-color: #ff0000;
+        }
+        .color span:nth-of-type(3){
+            background-color: #ffc0cb;
+        }
+        .color span:nth-of-type(4){
+            background-color: #00ffff;
+        }
+        .color span:nth-of-type(5){
+            background-color: #0000ff;
+        }
+        .color span.active{
+            border-radius: 50%;
+        }
+
+        .add-cart{
+            border: 1px solid #ddd;
+            width: 100%;
+            padding: 7px;
+            background-color: #fff;
+            margin-top: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+        .add-cart:hover{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .like{
+            cursor: pointer;
+        }
+        .like::before{
+            content: '\f08a';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-family: fontawesome;
+            color: #bbb;
+        }
+        .like.active::before{
+            content: '\f004';
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/06) 쇼핑몰 아이템 UI 호버 이펙트 with jQuery/images/model-female.png" alt="">
+        <div class="detail">
+            <div class="title">
+                <h2><em>Nightgown</em> Women's Designer Wear</h2>
+                <span>$55.99</span>
+            </div>
+            <div class="info">
+                <div class="size">
+                    <label>Sizes</label>
+                    <span>XS</span>
+                    <span>S</span>
+                    <span>M</span>
+                    <span>L</span>
+                    <span>XL</span>
+                </div>
+                <div class="color">
+                    <label>Colors</label>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            <span class="like"></span>
+            </div>
+            <button class="add-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <script>
+        $('.size span').click(function(){
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+        $('.color span').click(function(){
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+        });
+        $('.like').click(function(){
+            $(this).toggleClass('active');
+        });
+    </script>
+</body>
+</html>
