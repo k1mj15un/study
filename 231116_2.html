@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언 콘텐츠 슬라이드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #eee;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-weight: normal;
+        }
+
+        article{
+            width: 980px;
+            height: 500px;
+        }
+        .heading{
+            text-align: center;
+        }
+        .heading span{
+            color: crimson;
+            font-size: 24px;
+        }
+        .heading h1{
+            font-size: 36px;
+            margin-top: 30px;
+        }
+        .heading h1 em{
+            position: relative;
+            font-style: normal;
+        }
+        .heading h1 em::before{
+            content: url(images/logo-kakao.png);
+            position: absolute;
+            right: -30px;
+            top: -30px;
+        }
+
+        .content > div{
+            width: 50%;
+            float: left;
+            height: 400px;
+            box-sizing: border-box;
+        }
+        .title{
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+            padding-left: 15px;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+        .title::after{
+            content: '\f105';
+            font-family: fontawesome;
+            float: right;
+            margin-right: 5px;
+            margin-top: 3px;
+            transition: 0.3s;
+        }
+        .title:hover,
+        .title.active{
+            background-color: #203049;
+            color: #fff;
+        }
+        .title.active::after{
+            transform: rotate(90deg);
+            color: orange;
+        }
+        .desc{
+            padding: 15px;
+            display: none;
+        }
+        .desc.active{
+            display: block;
+        }
+        .img{
+            text-align: right;
+        }
+        .img img{
+            height: 370px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <article>
+            <div class="heading">
+                <span>하드코딩(Hard Coding) 실력이 진짜 퍼블리싱 실력입니다.</span>
+                <h1><em>카톡</em> 간편 회원가입, <b>코딩웍스</b>의 진짜 퍼블리싱 강의를 만나보세요.</h1>
+            </div>
+            <div class="content">
+                <div class="accordion">
+                    <div class="title active" data-img="[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/07) 코딩웍스 강의특징 어코디언 콘텐츠 슬라이드 with jQuery/images/app-capture-01.png">
+                        하드코딩(Hard Coding)실력이 진짜 퍼블리싱 실력
+                    </div>
+                    <div class="desc active">
+                        제이쿼리 플러그인 사용해서 역동적이고 화려하게 꾸미는 퍼블리싱은 진짜 퍼블리싱이 아닙니다.
+                        <br><br>
+                        진짜 퍼블리싱 실력은 HTML로 레이아웃 설계를 꼼꼼히 잘하고, CSS로 배치와 상세 디자인하고, 직접 작성한 제이쿼리(JQUERY)로 상호작용까지 만들 수 있는 것이 진짜 퍼블리싱 실력입니다.
+                    </div>
+                    <div class="title"  data-img="[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/07) 코딩웍스 강의특징 어코디언 콘텐츠 슬라이드 with jQuery/images/app-capture-02.png">
+                        당장의 화려함 보다 탄탄한 이론이 필수
+                    </div>
+                    <div class="desc">
+                        제이쿼리 플러그인 사용해서 역동적이고 화려하게 꾸미는 퍼블리싱은 진짜 퍼블리싱이 아닙니다.
+                        <br><br>
+                        진짜 퍼블리싱 실력은 HTML로 레이아웃 설계를 꼼꼼히 잘하고, CSS로 배치와 상세 디자인하고, 직접 작성한 제이쿼리(JQUERY)로 상호작용까지 만들 수 있는 것이 진짜 퍼블리싱 실력입니다.
+                    </div>
+                    <div class="title"  data-img="[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/07) 코딩웍스 강의특징 어코디언 콘텐츠 슬라이드 with jQuery/images/app-capture-03.png">
+                        코딩웍스의 강의의 코딩은 꼼꼼하고 정확합니다.
+                    </div>
+                    <div class="desc">
+                        제이쿼리 플러그인 사용해서 역동적이고 화려하게 꾸미는 퍼블리싱은 진짜 퍼블리싱이 아닙니다.
+                        <br><br>
+                        진짜 퍼블리싱 실력은 HTML로 레이아웃 설계를 꼼꼼히 잘하고, CSS로 배치와 상세 디자인하고, 직접 작성한 제이쿼리(JQUERY)로 상호작용까지 만들 수 있는 것이 진짜 퍼블리싱 실력입니다.
+                    </div>
+                    <div class="title"  data-img="[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/07) 코딩웍스 강의특징 어코디언 콘텐츠 슬라이드 with jQuery/images/app-capture-04.png">퍼블리싱 학습방법 이렇게 하세요.</div>
+                    <div class="desc">
+                        제이쿼리 플러그인 사용해서 역동적이고 화려하게 꾸미는 퍼블리싱은 진짜 퍼블리싱이 아닙니다.
+                        <br><br>
+                        진짜 퍼블리싱 실력은 HTML로 레이아웃 설계를 꼼꼼히 잘하고, CSS로 배치와 상세 디자인하고, 직접 작성한 제이쿼리(JQUERY)로 상호작용까지 만들 수 있는 것이 진짜 퍼블리싱 실력입니다.
+                    </div>
+                </div>
+                <div class="img">
+                    <img src="./[완성본] HTML+CSS 실전 퍼블리싱 with jQuery/07) 코딩웍스 강의특징 어코디언 콘텐츠 슬라이드 with jQuery/images/app-capture-01.png" alt="">
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <script>
+        $('.title').click(function(){
+            $(this).addClass('active');
+            $(this).siblings('.title').removeClass('active');
+            $(this).siblings('.desc').stop().slideUp(); //순서가 중요. 이 구문이 아래에 있으면 오류남
+            $(this).next().stop().slideDown();
+
+            var dataImg = $(this).attr('data-img');
+            $('.img img').attr('src', dataImg);
+        });
+    </script>
+</body>
+</html>
