@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비디오 백그라운드를 활용한 랜딩페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #fff;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            background-color: #eee;
+            font-family: 'Montserrat', sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-weight: normal;
+        }
+        /* font-family: 'Monoton', sans-serif; */
+        /* font-family: 'Raleway', sans-serif; */
+
+        /* bg video */
+        .video-frame{}
+        .video-frame video{
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+
+        .logo{
+            position: absolute;
+            top: 50px;
+            left: 100px;
+        }
+
+        .heading{
+            position: absolute;
+            width: 700px;
+            left: 100px;
+            bottom: 100px;
+            animation: showing1 2s 1s linear;
+            animation-fill-mode: both; /* 0% > 100%으로 간 다음 다시 0%으로 돌아가지 말라는 뜻 */
+        }
+        .heading h1{
+            font-size: 60px;
+            margin: 0; /* h1태그는 기본적으로 상하좌우 마진이 있기 때문에 없애준다 */
+        }
+        .heading h1 span{
+            display: block;
+            color: crimson;
+            margin-bottom: 40px;
+        }
+        .heading p{
+            font-size: 1.2em;
+            line-height: 1.5em;
+        }
+        .btn-book,
+        .btn-learn{
+            background-color: #fff;
+            color: #222;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 150px;
+            padding: 7px;
+            text-align: center;
+            border-radius: 20px;
+            margin-right: 5px;
+            border: 2px solid #fff;
+            transition: 0.3s;
+        }
+        .btn-book{}
+        .btn-learn{
+            background-color: transparent;
+            color: #fff;
+        }
+        .btn-book:hover{
+            background-color: #000;
+            color: #fff;
+            border-color: transparent;
+        }
+        .btn-learn:hover{
+            background-color: #fff;
+            color: #000;
+        }
+
+        .anniversary{
+            position: absolute;
+            right: 100px;
+            bottom: 80px;
+            color: #000;
+            text-align: center;
+            animation: showing2 2s 1s linear; /* 첫번째 초는 duration, 두번째 초는 delay */
+            animation-fill-mode: both;
+        }
+        .anniversary em{
+            display: block;
+            font-style: normal;
+            font-size: 30px;
+            letter-spacing: 4px;
+            margin-bottom: 80px;
+        }
+        .anniversary span{
+            font-family: 'Monoton', sans-serif;
+            font-size: 150px;
+        }
+
+        @keyframes showing1{
+            0%{
+                opacity: 0;
+                margin-left: -100px;
+            }
+            100%{
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+        @keyframes showing2{
+            0%{
+                opacity: 0;
+                margin-right: -100px;
+            }
+            100%{
+                opacity: 1;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video-frame">
+            <video src="./[완성본]+비디오+백그라운드를+활용한+랜딩페이지+실전+퍼블리싱+with+jQuery/images/video-female.mp4" autoplay muted loop poster="images/placeholder-female.jpg"></video>
+        </div>
+    </div>
+    <div class="logo">
+        <img src="./[완성본]+비디오+백그라운드를+활용한+랜딩페이지+실전+퍼블리싱+with+jQuery/images/logo.png" alt="">
+    </div>
+    <div class="heading">
+        <h1><span>Wave Ocean</span>The World's Ocean</h1>
+        <p>The Atlantic Ocean is situated between the Americas and European/African continents. 
+            Atlantic Ocean is the second largest and saltiest ocean in the world. 
+            It resembles an S-shape between the Americas, Europe and Africa. 
+            “Atlantic” originated from the Greek god “Atlas” who carried the sky for eternity.</p>
+        <a href="#" class="btn-book">Book Now</a>
+        <a href="#" class="btn-learn">Learn More</a>
+    </div>
+    <div class="anniversary">
+        <em>Anniversary</em><span>60</span>
+    </div>
+
+
+
+    <script>
+
+    </script>
+</body>
+</html>
