@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달창 만들기(css 애니메이션)</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+        h1, h2, h3, h4, h5, h6{
+            font-weight: normal;
+        }
+
+        .modal{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: none;
+        }
+        .modal-content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            width: 350px;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: slidefade 0.35s linear;
+        }
+        .modal-content .btn-close{
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+        .btn-guide{
+            background-color: #616bee;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            padding: 7px;
+            display: block;
+        }
+        .modal:target{
+            display: block;
+        }
+
+        @keyframes slidefade{
+            0%{
+                opacity: 0;
+                margin-top: -50px;
+            }
+            100%{
+                opacity: 1;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#modal-notice">Open Fade-in Modal with :target</a>
+    <div id="modal-notice" class="modal">
+        <div class="modal-content">
+            <a href="#" class="btn-close">X</a>
+            <h2>Welcome to Teams!</h2>
+            <img src="./회사에서 바로 써먹는~ 퍼블리싱 실전 예제 만들기/jQuery Fade In Out Modal/group.png" alt="">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat aliquid quidem asperiores necessitatibus temporibus expedita maiores 
+                quibusdam nihil modi nobis, voluptas rem iste ipsam dolorum minus iure animi, ut doloribus, nisi sapiente suscipit eligendi quo? 
+                Ullam vel quasi, minus eius amet aut iste culpa maxime repudiandae? Consequuntur officiis debitis nulla!
+            </p>
+            <a href="#" class="btn-guide">Open Guide</a>
+        </div>
+    </div>
+</body>
+</html>
