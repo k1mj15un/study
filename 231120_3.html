@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>details와 summary로 만드는 아코디언</title>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 18px;
+            line-height: 1.5em;
+        }
+
+        .html-accordion{
+            width: 600px;
+            margin: 50px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 40px 20px;
+            border-radius: 10px;
+        }
+        .html-accordion h1{
+            margin-top: 0;
+            text-align: center;
+        }
+        details{
+            padding: 1em;
+        }
+        details summary{
+            list-style: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        details[open] summary{
+            font-weight: bold;
+        }
+        details[open] summary::after{
+            transform: rotateX(180deg);
+        }
+        details summary::after{
+            content: '\f107';
+            font-family: fontawesome;
+            float: right;
+        }
+        .detail-content{
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .detail-content p{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="html-accordion">
+        <h1>FAQ Examples with HTML</h1>
+        <details>
+            <summary>Q) Use service data to identify your most common questions.</summary>
+            <div class="detail-content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione facilis officia maiores maxime 
+                accusantium nulla velit obcaecati repellat totam earum alias aliquid ipsa quo, tempora modi dicta 
+                esse incidunt culpa? Officiis delectus ducimus libero, iusto reprehenderit ab ex blanditiis in?
+            </div>
+        </details>
+        <details>
+            <summary>Q) Include space for live support options.</summary>
+            <div class="detail-content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione facilis officia maiores maxime 
+                accusantium nulla velit obcaecati repellat totam earum alias aliquid ipsa quo, tempora modi dicta 
+                esse incidunt culpa? Officiis delectus ducimus libero, iusto reprehenderit ab ex blanditiis in?
+            </div>
+        </details>
+        <details>
+            <summary>Q) Showcases expertise, trust, and authority within.</summary>
+            <div class="detail-content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione facilis officia maiores maxime 
+                accusantium nulla velit obcaecati repellat totam earum alias aliquid ipsa quo, tempora modi dicta 
+                esse incidunt culpa? Officiis delectus ducimus libero, iusto reprehenderit ab ex blanditiis in?
+            </div>
+        </details>
+        <details>
+            <summary>Q) Update content and add more solutions over time.</summary>
+            <div class="detail-content">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione facilis officia maiores maxime 
+                accusantium nulla velit obcaecati repellat totam earum alias aliquid ipsa quo, tempora modi dicta 
+                esse incidunt culpa? Officiis delectus ducimus libero, iusto reprehenderit ab ex blanditiis in?
+            </div>
+        </details>
+    </div>
+</body>
+</html>
