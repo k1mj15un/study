@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색창 모달(flexbox)</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+
+        header{
+            height: 80px;
+            background-color: slategray;
+            display: flex;
+            justify-content: center;
+        }
+        nav{
+            width: 1280px; /* 기본적인 콘텐츠 너비: 1100 ~ 1280 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img{
+            height: 40px;
+        }
+        .search-box{
+            color: #fff;
+            font-size: 2em;
+        }
+        .search-box i{
+            cursor: pointer;
+        }
+        section{
+            font-size: 3em;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+        }
+
+        .modal-search{
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            display: flex; /* 이미 display 속성을 썼기 때문에 또 display: none을 사용하면 안됨 */
+            justify-content: center;
+            align-items: center;
+            top: -300px;
+            transition: 0.35s;
+        }
+        .modal-search.active{
+            top: 0;
+        }
+        .close-search{
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #777;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .search{
+            width: 500px;
+        }
+        .search .field{
+            display: flex;
+            position: relative;
+        }
+        .search .field::before{
+            content: '\f002';
+            font-family: fontawesome;
+            position: absolute;
+            color: #5b5b5b;
+            font-size: 0.7em;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .search .field input[type=search],
+        .search .field input[type=button]{
+            padding: 15px;
+            border: none;
+            outline: none;
+        }
+        .search .field input[type=search]{
+            flex: 5;
+            padding-left: 50px;
+        }
+        .search .field input[type=search]::-webkit-search-cancel-button{
+            display: none;
+        }
+        .search .field input[type=search]::placeholder{ /* input은 before, after를 가질 수 없기 때문에 field라는 div를 씌워줌 */
+            font-style: italic;
+        }
+        .search .field input[type=search]:focus::placeholder{
+            visibility: hidden;
+        }
+        .search .field input[type=button]{
+            flex: 1;
+            background-color: crimson;
+            font: #fff;
+            opacity: 0.9;
+            cursor: pointer;
+        }
+        .search .field input[type=button]:hover{
+            opacity: 1;
+        }
+        .hash-tag{
+            font-size: 14px;
+            color: gold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="./회사에서 바로 써먹는~ 퍼블리싱 실전 예제 만들기/Search Form Modal with Flexbox/logo-favicon.png" alt="">
+                </div>
+                <div class="search-box">
+                    <i class="open-search fa-solid fa-magnifying-glass"></i>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <h1>Section Content</h1>
+        </section>
+    </div>   
+    <div class="modal-search">
+        <i class="close-search fa-solid fa-x"></i>
+        <div class="search">
+            <div class="field">
+                <input type="search" placeholder="What are you looking for?">
+                <input type="button" value="Search">
+            </div>
+            <p class="hash-tag"> 
+                #코딩웍스 #퍼블리싱 #인프런 #취업성공 #개인포트폴리오
+            </p>
+        </div>
+    </div>
+
+    <script>
+        $('.search .field input[type=search]').focus(function(){
+            $(this).parent().next().css('display', 'block');
+        });
+        $('.search .field input[type=search]').blur(function(){
+            $(this).parent().next().css('display', 'none');
+        });
+        $('.open-search').click(function(){
+            $('.modal-search').addClass('active');
+        });
+        $('.close-search, section').click(function(){
+            $('.modal-search').removeClass('active');
+        });
+    </script>
+</body>
+</html>
