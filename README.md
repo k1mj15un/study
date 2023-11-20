@@ -23,7 +23,7 @@
 231117 : 비디오 백그라운드 랜딩페이지 중간완성 <br>
 231118 : 비디오 백그라운드 랜딩페이지 완성, 네이버밴드 로그인 페이지 <br>
 231119 : 넷플릭스 FAQ 어코디언, 밀리의 서재 FAQ 아코디언, 모달창 만들기(jquery, 바닐라자바스크립트, css애니메이션) <br>
-231120 : <br>
+231120 : 그라이언트 텍스트(webkit-background-clip,webkit-text-fill-color), 검색창모달(flexbox), details와 summary로 만드는 아코디언<br>
 <br>
 231121 : <br>
 231122 : <br>
