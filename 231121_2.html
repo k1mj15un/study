@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a태그 앵커, smooth scrolling</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./a앵커만들기-이론예제/js/jquery.scrollTo.min.js"></script>
+    <style>
+        /* smooth scrolling2 */
+        html{
+            scroll-behavior: smooth; /* a링크 페어링 되어있는 모든 a링크에 해당. 익스플로러에서는 사용안됨 */
+        }
+
+        header a{
+            background-color: teal;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        p{
+            font-size: 1.5em;
+            line-height: 2em;
+        }
+        .btn-gototop{
+            background-color: pink;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#part1">html part</a>
+            <a href="#part2">css part</a>
+            <a href="#part3">jquery part</a>
+            <a href="#part4">portfolio part</a>
+        </header>
+    </div>
+    <h1 id="part1">html part</h1>
+    <hr>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, ipsa eum. 
+        Deleniti obcaecati debitis provident corporis sit rem eligendi, non aliquid 
+        accusamus? Nobis libero qui quasi accusantium sequi, esse quae minima repellendus 
+        adipisci modi soluta laboriosam assumenda fuga aperiam officia saepe enim ipsa 
+        recusandae quaerat sed sunt illum omnis ea ut! Ad officiis consequuntur voluptates modi 
+        quisquam neque cupiditate exercitationem saepe minima doloribus? Quasi officiis sequi 
+        eum ducimus et. Quasi nisi unde molestias ad inventore? Similique culpa libero doloribus, 
+        beatae molestias voluptatibus mollitia totam minima dicta sequi voluptate neque. Modi officiis 
+        et nesciunt dignissimos facere, fugit aspernatur aperiam odit praesentium doloribus quo 
+        asperiores animi tempore porro illum impedit expedita error iure! Possimus esse aliquam 
+        pariatur tempora voluptas, facere autem odio saepe nulla natus placeat error, maiores vero 
+        dolorum quasi perferendis dolore, sint eum deserunt. Quis quibusdam impedit explicabo inventore 
+        incidunt error expedita, consequatur eos amet ipsam numquam quam ex quisquam maiores quaerat 
+        ratione earum praesentium. Repellat, obcaecati? At, quidem amet! Incidunt cum error, repellendus 
+        enim a unde? Architecto maxime, quidem ab blanditiis natus nostrum assumenda ratione laboriosam 
+        sit accusantium, quae accusamus quia veniam amet similique porro error temporibus, ea autem. 
+        Repellendus earum excepturi vel et quod necessitatibus nesciunt quas asperiores?
+    </p>
+    <a class="btn-gototop" href="#">Go to Top</a> <!--#이 현재 문서의 제일 상단을 뜻함-->
+    <h1 id="part2">css part</h1>
+    <hr>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, ipsa eum. 
+        Deleniti obcaecati debitis provident corporis sit rem eligendi, non aliquid 
+        accusamus? Nobis libero qui quasi accusantium sequi, esse quae minima repellendus 
+        adipisci modi soluta laboriosam assumenda fuga aperiam officia saepe enim ipsa 
+        recusandae quaerat sed sunt illum omnis ea ut! Ad officiis consequuntur voluptates modi 
+        quisquam neque cupiditate exercitationem saepe minima doloribus? Quasi officiis sequi 
+        eum ducimus et. Quasi nisi unde molestias ad inventore? Similique culpa libero doloribus, 
+        beatae molestias voluptatibus mollitia totam minima dicta sequi voluptate neque. Modi officiis 
+        et nesciunt dignissimos facere, fugit aspernatur aperiam odit praesentium doloribus quo 
+        asperiores animi tempore porro illum impedit expedita error iure! Possimus esse aliquam 
+        pariatur tempora voluptas, facere autem odio saepe nulla natus placeat error, maiores vero 
+        dolorum quasi perferendis dolore, sint eum deserunt. Quis quibusdam impedit explicabo inventore 
+        incidunt error expedita, consequatur eos amet ipsam numquam quam ex quisquam maiores quaerat 
+        ratione earum praesentium. Repellat, obcaecati? At, quidem amet! Incidunt cum error, repellendus 
+        enim a unde? Architecto maxime, quidem ab blanditiis natus nostrum assumenda ratione laboriosam 
+        sit accusantium, quae accusamus quia veniam amet similique porro error temporibus, ea autem. 
+        Repellendus earum excepturi vel et quod necessitatibus nesciunt quas asperiores?
+    </p>
+    <a class="btn-gototop" href="#">Go to Top</a>
+
+    <h1 id="part3">jquery part</h1>
+    <hr>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, ipsa eum. 
+        Deleniti obcaecati debitis provident corporis sit rem eligendi, non aliquid 
+        accusamus? Nobis libero qui quasi accusantium sequi, esse quae minima repellendus 
+        adipisci modi soluta laboriosam assumenda fuga aperiam officia saepe enim ipsa 
+        recusandae quaerat sed sunt illum omnis ea ut! Ad officiis consequuntur voluptates modi 
+        quisquam neque cupiditate exercitationem saepe minima doloribus? Quasi officiis sequi 
+        eum ducimus et. Quasi nisi unde molestias ad inventore? Similique culpa libero doloribus, 
+        beatae molestias voluptatibus mollitia totam minima dicta sequi voluptate neque. Modi officiis 
+        et nesciunt dignissimos facere, fugit aspernatur aperiam odit praesentium doloribus quo 
+        asperiores animi tempore porro illum impedit expedita error iure! Possimus esse aliquam 
+        pariatur tempora voluptas, facere autem odio saepe nulla natus placeat error, maiores vero 
+        dolorum quasi perferendis dolore, sint eum deserunt. Quis quibusdam impedit explicabo inventore 
+        incidunt error expedita, consequatur eos amet ipsam numquam quam ex quisquam maiores quaerat 
+        ratione earum praesentium. Repellat, obcaecati? At, quidem amet! Incidunt cum error, repellendus 
+        enim a unde? Architecto maxime, quidem ab blanditiis natus nostrum assumenda ratione laboriosam 
+        sit accusantium, quae accusamus quia veniam amet similique porro error temporibus, ea autem. 
+        Repellendus earum excepturi vel et quod necessitatibus nesciunt quas asperiores?
+    </p>
+    <a class="btn-gototop" href="#">Go to Top</a>
+
+    <h1 id="part4">portfolio part</h1>
+    <hr>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, ipsa eum. 
+        Deleniti obcaecati debitis provident corporis sit rem eligendi, non aliquid 
+        accusamus? Nobis libero qui quasi accusantium sequi, esse quae minima repellendus 
+        adipisci modi soluta laboriosam assumenda fuga aperiam officia saepe enim ipsa 
+        recusandae quaerat sed sunt illum omnis ea ut! Ad officiis consequuntur voluptates modi 
+        quisquam neque cupiditate exercitationem saepe minima doloribus? Quasi officiis sequi 
+        eum ducimus et. Quasi nisi unde molestias ad inventore? Similique culpa libero doloribus, 
+        beatae molestias voluptatibus mollitia totam minima dicta sequi voluptate neque. Modi officiis 
+        et nesciunt dignissimos facere, fugit aspernatur aperiam odit praesentium doloribus quo 
+        asperiores animi tempore porro illum impedit expedita error iure! Possimus esse aliquam 
+        pariatur tempora voluptas, facere autem odio saepe nulla natus placeat error, maiores vero 
+        dolorum quasi perferendis dolore, sint eum deserunt. Quis quibusdam impedit explicabo inventore 
+        incidunt error expedita, consequatur eos amet ipsam numquam quam ex quisquam maiores quaerat 
+        ratione earum praesentium. Repellat, obcaecati? At, quidem amet! Incidunt cum error, repellendus 
+        enim a unde? Architecto maxime, quidem ab blanditiis natus nostrum assumenda ratione laboriosam 
+        sit accusantium, quae accusamus quia veniam amet similique porro error temporibus, ea autem. 
+        Repellendus earum excepturi vel et quod necessitatibus nesciunt quas asperiores?
+    </p>
+    <a class="btn-gototop" href="#">Go to Top</a>
+
+    <script>
+        // smooth scrolling1
+        /*
+        $('header a, .btn-gototop').click(function(){
+            $.scrollTo(this.hash || 0, 900);
+            e.preventDefault();
+        })
+        */
+    </script>
+</body>
+</html>
