@@ -25,7 +25,7 @@
 231119 : 넷플릭스 FAQ 어코디언, 밀리의 서재 FAQ 아코디언, 모달창 만들기(jquery, 바닐라자바스크립트, css애니메이션) <br>
 231120 : 그라이언트 텍스트(webkit-background-clip,webkit-text-fill-color), 검색창모달(flexbox), details와 summary로 만드는 아코디언<br>
 <br>
-231121 : <br>
+231121 : 탭메뉴콘텐츠(:target 가상클래스), a태그 앵커, smooth scrolling<br>
 231122 : <br>
 231123 : <br>
 231124 : <br>
