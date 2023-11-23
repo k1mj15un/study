@@ -28,7 +28,7 @@
 231121 : 탭메뉴콘텐츠(:target 가상클래스), a태그 앵커, smooth scrolling<br>
 231122 : I am sick이에요~ <br>
 231123 : css, jquery 애니메이션 복습 <br>
-231124 : <br>
+231124 : css 애니메이션 복습 <br>
 231125 : <br>
 231126 : <br>
 231127 : <br>
