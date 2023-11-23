@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호버한 메뉴 외 나머지가 흐려지는 네비게이션 복습</title>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: royalblue;
+            color: #fff;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .gnb{
+            position: absolute;
+            top: 50%;
+            left: 70px;
+            transform: translateY(-50%);
+        }
+        .gnb a{
+            display: block;
+            font-size: 40px;
+            line-height: 1.5em;
+        }
+        .gnb a::before{
+            content: '\f105';
+            font-family: fontawesome;
+            margin-right: 10px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .gnb:hover a{
+            opacity: 0.3;
+        }
+        .gnb a:hover{
+            opacity: 1;
+        }
+        .gnb a:hover::before{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <a href="#">New Arrivals</a>
+        <a href="#">Summer Collection</a>
+        <a href="#">Winter Collection</a>
+        <a href="#">Special Offers</a>
+        <a href="#">Trends</a>
+    </div>
+</body>
+</html>

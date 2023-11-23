@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hover하면 나타나는 툴 팁 만들기 복습</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #222;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+        .container{
+            display: flex;
+        }
+        .item{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .item span{
+            position: absolute;
+            top: -100px;
+            left: -65px;
+            width: 250px;
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            opacity: 0;
+            transition: 0.3s;
+            visibility: hidden; /**/
+        }
+        .item span::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            background-color: #222;
+        }
+        .item:hover span{
+            opacity: 1;
+            visibility: visible; /**/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-01.png" alt="">
+            <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </span>
+        </div>
+        <div class="item">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-02.png" alt="">
+            <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </span>
+        </div>
+        <div class="item">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-03.png" alt="">
+            <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </span>
+        </div>
+        <div class="item">
+            <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/05.가상클래스 hover 활용한 실전 퍼블리싱 02(마우스 오버되면 나타나는 툴팁 만들기)/images/icon-04.png" alt="">
+            <span>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </span>
+        </div>
+    </div>
+</body>
+</html>

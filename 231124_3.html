@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위아래로 분리되는 네비게이션 호버 이펙트 복습</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            color: #fff;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .container{
+            display: flex;
+        }
+        .item{
+            position: relative;
+            width: 300px;
+            height: 200px;
+            margin: 10px;
+        }
+        .front{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #444;
+            text-align: center;
+            transition: 0.5s;
+            z-index: 1;
+        }
+        .front h2{
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .desc{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 200px;
+            background-color: #fff;
+            color: #222;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: 0.5s;
+        }
+        .desc a{
+            background-color: yellowgreen;
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+        .desc a:hover{
+            background-color: #000;
+            color: #fff;
+        }
+
+        .item:hover .front{
+            top: -50%;
+        }
+        .item:hover .desc{
+            top: 50%;
+            opacity: 1;
+        }
+        .item:hover img{
+            animation: ani 1s linear infinite;
+        }
+
+        @keyframes ani{
+            0%{
+                transform: scale(1);
+            }
+            50%{
+                transform: scale(1.2);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <div class="front">
+                <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/07.가상클래스 hover 활용한 실전 퍼블리싱 04(위아래로 분리되는 호버 네비게이션 이펙트)/images/space-01.png" alt="">
+                <h2>Mars</h2>
+            </div>
+            <div class="desc">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab tempora fugiat cupiditate, 
+                    laborum, possimus sit explicabo totam nobis hic facere architecto exercitationem aliquam tenetur esse suscipit!
+                </p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="front">
+                <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/07.가상클래스 hover 활용한 실전 퍼블리싱 04(위아래로 분리되는 호버 네비게이션 이펙트)/images/space-02.png" alt="">
+                <h2>Jupiter</h2>
+            </div>
+            <div class="desc">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab tempora fugiat cupiditate, 
+                    laborum, possimus sit explicabo totam nobis hic facere architecto exercitationem aliquam tenetur esse suscipit!
+                </p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+        <div class="item">
+            <div class="front">
+                <img src="./[완성본] HTML+CSS 실전 퍼블리싱 제작(Part 1)/07.가상클래스 hover 활용한 실전 퍼블리싱 04(위아래로 분리되는 호버 네비게이션 이펙트)/images/space-03.png" alt="">
+                <h2>Saturnus</h2>
+            </div>
+            <div class="desc">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab tempora fugiat cupiditate, 
+                    laborum, possimus sit explicabo totam nobis hic facere architecto exercitationem aliquam tenetur esse suscipit!
+                </p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
