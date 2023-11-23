@@ -26,8 +26,8 @@
 231120 : 그라이언트 텍스트(webkit-background-clip,webkit-text-fill-color), 검색창모달(flexbox), details와 summary로 만드는 아코디언<br>
 <br>
 231121 : 탭메뉴콘텐츠(:target 가상클래스), a태그 앵커, smooth scrolling<br>
-231122 : <br>
-231123 : <br>
+231122 : I am sick이에요~ <br>
+231123 : css, jquery 애니메이션 복습 <br>
 231124 : <br>
 231125 : <br>
 231126 : <br>
