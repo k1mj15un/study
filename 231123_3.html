@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>더블 보더 레이더스 애니메이션 복습</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+        }
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .container{
+            display: flex;
+        }
+        .box{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 20px;
+            cursor: pointer;
+        }
+        .box span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 1px solid #fff;
+            width: inherit;
+            height: inherit;
+            border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+            animation: ani 5s linear infinite;
+        }
+        .box span:nth-child(1){
+            animation: ani 5s linear infinite;
+        }
+        .box span:nth-child(2){
+            animation: ani 3s linear infinite;
+            animation-direction: reverse;
+        }
+        .box span:nth-child(3){
+            animation: ani 8s linear infinite;
+        }
+        .box:nth-child(1):hover span{
+            border: transparent;
+            background-color: crimson;
+        }
+        .box:hover span:nth-child(1){
+            opacity: 0.6;
+        }
+        .box:hover span:nth-child(2){
+            opacity: 0.4;
+        }
+        .box:hover span:nth-child(3){
+            opacity: 0.8;
+        }
+        .box:nth-child(2):hover span{
+            border: transparent;
+            background-color: royalblue;
+        }
+        .box:nth-child(3):hover span{
+            border: transparent;
+            background-color: yellowgreen;
+        }
+        .box div{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .box div h2{
+            margin-bottom: 10px;
+        }
+        .box div a{
+            border: 1px solid #fff;
+            border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+            padding: 8px;
+        }
+
+        @keyframes ani{
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div>
+                <h2>Heading Text</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Libero eius veritatis saepe rerum, architecto magni cupiditate soluta 
+                    sapiente adipisci dicta eos dolore aliquid, eaque ut nesciunt. Id nam voluptatibus sed?
+                </p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+        <div class="box">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div>
+                <h2>Heading Text</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Libero eius veritatis saepe rerum, architecto magni cupiditate soluta 
+                    sapiente adipisci dicta eos dolore aliquid, eaque ut nesciunt. Id nam voluptatibus sed?
+                </p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+        <div class="box">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div>
+                <h2>Heading Text</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Libero eius veritatis saepe rerum, architecto magni cupiditate soluta 
+                    sapiente adipisci dicta eos dolore aliquid, eaque ut nesciunt. Id nam voluptatibus sed?
+                </p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
