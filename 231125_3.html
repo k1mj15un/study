@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS 아이콘 애니메이션</title>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+        .gnb{
+            background-color: #ddd;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(222, 222, 222, 0.2);
+            border-radius: 20px;
+        }
+        .gnb a{
+            background-color: #fff;
+            text-align: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            display: inline-block;
+            line-height: 120px;
+            font-size: 50px;
+            margin: 0 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gnb a .fa{
+            position: relative; /* hover했을 때 아이콘이 after에 가려져서 안보임.. z-index를 오지게 주니까 위로 올라옴 이유를 모르겠움 */
+            transition: 0.5s;
+            z-index: 1000;
+        }
+        .gnb a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 0;
+            transition: 0.5s;
+        }
+        .gnb a:hover::after{
+            height: 100%;
+        }
+        .gnb a:nth-child(1)::after{
+            background-color: #3b5999;
+        }
+        .gnb a:nth-child(2)::after{
+            background-color: #55acee;
+        }
+        .gnb a:nth-child(3)::after{
+            background-color: #dd4b39;
+        }
+        .gnb a:nth-child(4)::after{
+            background-color: #0077b5;
+        }
+        .gnb a:nth-child(5)::after{
+            background-color: #e4405f;
+        }
+        .gnb a:hover .fa{
+            color: #fff;
+            transform: rotateY(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-google-plus"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+</body>
+</html>

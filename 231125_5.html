@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폰트어썸 사용한 입력 필드 복습</title>
+    <script src="https://kit.fontawesome.com/31b9fd9886.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 높이설정이 되지 않으면 수직정렬이 되지 않는다. */
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+
+        .item,
+        .item2{
+            width: 300px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .item input,
+        .item2 input{
+            width: inherit;
+            height: 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            padding-left: 40px;
+            outline: none;
+            transition: 0.3s;
+        }
+        .item .fa{
+            position: absolute;
+            top: 0; 
+            left: 0;
+            font-size: 20px;
+            color: gray;
+            width: 40px; /* width, height값 주면 된다는 걸 생각 못해서 top, left값을 줬넴ㅋ */
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .item input:focus,
+        .item2 input:focus{
+            border: 1px solid royalblue;
+            box-shadow: 0 0 10px royalblue;
+        }
+        .item input:focus + .fa{ /* 인접선택자!!!!! */
+            color: royalblue;
+        }
+        .item input:focus::placeholder,
+        .item2 input:focus::placeholder{
+            visibility: hidden;
+        }
+
+        .item2 input{
+            padding-left: 50px;
+        }
+        .item2 .fa{
+            position: absolute;
+            top: 0; 
+            left: 0;
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: gray;
+            color: #fff;
+            border-radius: 5px 0 0 5px;
+        }
+        .item2 input:focus + .fa{
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="" class="info">
+        <div class="item">
+            <input type="text" placeholder="Your Name">
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="item">
+            <input type="email" placeholder="Email">
+            <i class="fa fa-envelope"></i>
+        </div>
+        <div class="item">
+            <input type="tel" placeholder="Phone Number">
+            <i class="fa fa-phone"></i>
+        </div>
+        <div class="item2">
+            <input type="text" placeholder="Your Name">
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="item2">
+            <input type="email" placeholder="Email">
+            <i class="fa fa-envelope"></i>
+        </div>
+        <div class="item2">
+            <input type="tel" placeholder="Phone Number">
+            <i class="fa fa-phone"></i>
+        </div>
+    </form>
+</body>
+</html>

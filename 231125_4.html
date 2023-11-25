@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이게이션 복습</title>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        a{
+            color: #222;
+            text-decoration: none;
+        }
+        .gnb{
+            background-color: #fff;
+            padding: 20px 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(222, 222, 222, 0.2);
+            display: flex;
+        }
+        .gnb a{
+            position: relative;
+            width: 100px;
+            height: 30px;
+            display: inline-block;
+            line-height: 30px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .gnb a span{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+        }
+        .gnb a span:nth-child(1){
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .gnb a span:nth-child(2){
+            color: yellowgreen;
+            top: 100%;
+            left: 0;
+        }
+        .gnb a:hover span:nth-child(1){
+            top: -100%;
+        }
+        .gnb a:hover span:nth-child(2){
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="gnb">
+        <a href="">
+            <span>메일</span>
+            <span>메일</span>
+        </a>
+        <a href="">
+            <span>카페</span>
+            <span>카페</span>
+        </a>
+        <a href="">
+            <span>블로그</span>
+            <span>블로그</span>
+        </a>
+        <a href="">
+            <span>지식iN</span>
+            <span>지식iN</span>
+        </a>
+        <a href="">
+            <span>쇼핑</span>
+            <span>쇼핑</span>
+        </a>
+        <a href="">
+            <span>Pay</span>
+            <span>Pay</span>
+        </a>
+        <a href="">
+            <span>사전</span>
+            <span>사전</span>
+        </a>
+        <a href="">
+            <span>뉴스</span>
+            <span>뉴스</span>
+        </a>
+    </div>
+</body>
+</html>
