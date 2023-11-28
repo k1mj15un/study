@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴 콘텐츠 복습</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            color: #222;
+            line-height: 1.5em;
+            font-weight: 300;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ededed;
+        }
+        a{
+            text-decoration: none;
+            color: #222;
+        }
+
+        section{
+            width: 800px;
+        }
+        .btn{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+        .btn li{
+            float: left;
+            font-size: 20px;
+            border: 1px solid #000;
+            background-color: #fff;
+            border-radius: 0 20px 0 0;
+            padding: 10px 20px;
+            width: 120px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .btn li:hover,
+        .btn li.active{
+            background-color: #B8BBFF;
+        }
+
+        .tabs{
+            position: relative;
+        }
+        .tabs::after{
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background-color: #B8BBFF;
+            border: 1px solid #000;
+            border-radius: 15px;
+            z-index: -1;
+        }
+        .tabs > div{
+            background-color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            border-radius: 0 15px 15px 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+        .tabs div.active{
+            display: block;
+        }
+
+        .tab_desc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 740px;
+            height: 120px;
+            padding: 10px;
+            background-color: #EDEEFF;
+            border: 1px solid #000;
+            border-radius: 50px 10px 10px 50px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .tab_desc:last-child{
+            margin-bottom: 0;
+        }
+        .tab_desc img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .tab_desc h2{
+            font-size: 16px;
+            font-weight: normal;
+            text-align: center;
+            margin-right: 20px;
+        }
+        .tab_desc p{
+            font-size: 14px;
+            font-weight: 300;
+            text-align: left;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="tab-inner">
+            <ul class="btn">
+                <li data-alt="tab1" class="active">추천평</li>
+                <li data-alt="tab2">구매자 리뷰</li>
+                <li data-alt="tab3">블로그 서평</li>
+            </ul>
+        </div>
+        <div class="tabs">
+            <div id="tab1" class="active">
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>듀나<br>
+                        평론가, SF소설가</h2>
+                    <p>앤디 위어의 세계는 점점 넓어지고, 다채로워지고, 재미있어지고 있다. 모두에게 좋은 일이다.</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>이정모 
+                        국립과천과학관 관장</h2>
+                    <p>『프로젝트 헤일메리』는 21세기 우주 탐사 SF의 방향과 수준을 알려주는 등대 같은 작품이다.아름답다! 
+                        어느 나라의 국적을 가진 사람보다는 지구인, 지구인보다는 우주인이라는 정체성을 심어주는 작품이다.</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>데니스홍 
+                        로봇공학자</h2>
+                    <p>이 책은 SF 소설이지만 과학적 지식을 바탕에 둔 훌륭한 디테일들이 절로 페이지를 넘기게 하는 대작이다.</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1701083266430-c9b2a5ab1353?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8" alt="">
+                    <h2>어니스트 클라인 
+                        각본가</h2>
+                    <p>단언컨대 내가 읽은 책들 중에서 최고의 책이다. 내가 지금까지 해본 가장 독창적이고, 매력적이고, 재미있는 여행!</p>
+                </div>
+            </div>
+            <!-- //tab1 -->
+            <div id="tab2">
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>데니스홍 
+                        로봇공학자</h2>
+                    <p>이 책은 SF 소설이지만 과학적 지식을 바탕에 둔 훌륭한 디테일들이 절로 페이지를 넘기게 하는 대작이다.</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1701083266430-c9b2a5ab1353?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8" alt="">
+                    <h2>어니스트 클라인 
+                        각본가</h2>
+                    <p>단언컨대 내가 읽은 책들 중에서 최고의 책이다. 내가 지금까지 해본 가장 독창적이고, 매력적이고, 재미있는 여행!</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>듀나<br>
+                        평론가, SF소설가</h2>
+                    <p>앤디 위어의 세계는 점점 넓어지고, 다채로워지고, 재미있어지고 있다. 모두에게 좋은 일이다.</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>이정모 
+                        국립과천과학관 관장</h2>
+                    <p>『프로젝트 헤일메리』는 21세기 우주 탐사 SF의 방향과 수준을 알려주는 등대 같은 작품이다.아름답다! 
+                        어느 나라의 국적을 가진 사람보다는 지구인, 지구인보다는 우주인이라는 정체성을 심어주는 작품이다.</p>
+                </div>
+            </div>
+            <!-- //tab2 -->
+            <div id="tab3">
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>듀나<br>
+                        평론가, SF소설가</h2>
+                    <p>앤디 위어의 세계는 점점 넓어지고, 다채로워지고, 재미있어지고 있다. 모두에게 좋은 일이다.</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1701083266430-c9b2a5ab1353?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHx8" alt="">
+                    <h2>어니스트 클라인 
+                        각본가</h2>
+                    <p>단언컨대 내가 읽은 책들 중에서 최고의 책이다. 내가 지금까지 해본 가장 독창적이고, 매력적이고, 재미있는 여행!</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>이정모 
+                        국립과천과학관 관장</h2>
+                    <p>『프로젝트 헤일메리』는 21세기 우주 탐사 SF의 방향과 수준을 알려주는 등대 같은 작품이다.아름답다! 
+                        어느 나라의 국적을 가진 사람보다는 지구인, 지구인보다는 우주인이라는 정체성을 심어주는 작품이다.</p>
+                </div>
+                <div class="tab_desc">
+                    <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww" alt="">
+                    <h2>데니스홍 
+                        로봇공학자</h2>
+                    <p>이 책은 SF 소설이지만 과학적 지식을 바탕에 둔 훌륭한 디테일들이 절로 페이지를 넘기게 하는 대작이다.</p>
+                </div>
+            </div>
+            <!-- //tab3 -->
+        </div>
+    </section>
+
+    <script>
+        $('.btn li').click(function(){
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+
+            var tab = $(this).attr('data-alt');
+            $('.tabs div').removeClass('active');
+            $('#' + tab).addClass('active');
+        });
+    </script>
+</body>
+</html>
