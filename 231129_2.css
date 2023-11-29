@@ -1,0 +1,63 @@
+@charset "UTF-8";
+body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #222;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* button hover effect */
+/* 블록주석은 살아있지만 줄주석(//)은 css에서 삭제됨 */
+.btn-outer .btn {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  width: 300px;
+  display: block;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  background-color: #555;
+  transition: 0.5s;
+}
+.btn-outer .btn:hover {
+  background-color: transparent;
+}
+.btn-outer .btn::before, .btn-outer .btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border: 1px solid #fff;
+  opacity: 0;
+  transition: 0.5s;
+}
+.btn-outer .btn:hover::before {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+.btn-outer .btn:hover::after {
+  transform: rotate(-45deg);
+  opacity: 1;
+}
+
+.font-large {
+  font-size: 60px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.font-medium {
+  font-size: 40px;
+  color: yellowgreen;
+}
+.font-small {
+  font-size: 20px;
+  color: royalblue;
+}
