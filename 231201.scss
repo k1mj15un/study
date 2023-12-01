@@ -1,0 +1,10 @@
+.frame{
+    padding: 20px;
+    border: 1px solid #000;
+    text-align: center;
+    @at-root .heading{ //@at-root : 강제로 .frame 밖으로 이동
+        font-size: 36px;
+        color: crimson;
+        font-weight: normal;
+    }
+}
