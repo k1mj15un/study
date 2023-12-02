@@ -1,0 +1,59 @@
+/*scss에서 import >> @import "";*/
+
+/*
+    산수연산자
+    + : 더하기
+    - : 빼기
+    * : 곱하기
+    / : 나누기
+    % : 나머지
+    ex) margin: $box-margin / 3;
+        padding: (50px / 10) >> /(나누기)는 괄호로 묶어줘야 함. 뒤에값은 px을 써주면 안된다.
+                                =, -, *는 괄호가 필요없음
+*/
+
+/*
+    css 선언 방식
+    @min 믹스인 이름{재사용 스타일 속성}
+    mixin과 include 순서 중요(정의하지도 않은 상태에서 사용하면 오류가 난다.)
+    mixin.css를 따로 만드는 것도 좋은 방법 @import "mixin"; >> .css는 붙이지 않아도 적용됨
+*/
+
+@mixin default{
+    font-size: 15px;
+    margin: 0;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6em;
+}
+
+@mixin headline{ //mixin으로 컴파일 된 것들은 css에 나오지 않는다
+    text-align: center;
+    font-size: 36px;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 20px;
+    span{
+        color: royalblue;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100px;
+        height: 4px;
+        background-color: crimson;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+body{
+    @include default;
+}
+.heading{
+    @include headline;
+}
+.news-headline{
+    @include headline;
+}

@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+// buttons mixin
+@mixin border-style($width, $style, $color) {
+    border: $width $style $color;
+}
+@mixin btn-padding($updown, $leftright) {
+    padding: $updown $leftright;
+}
+
+.btns{
+    button{
+        /* width: 200px; */
+        padding: 7px;
+        background-color: #fff;
+        outline: none;
+        cursor: pointer;
+        font-size: 18px;
+        @include btn-padding(20px, 150px);
+        &.approval{
+            @include border-style(2px, solid, blue);
+        }
+        &.refuse{
+            @include border-style(2px, dashed, red);
+        }
+    }
+}

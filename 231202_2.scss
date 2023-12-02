@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+* {
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* color variables */
+$complete-btn: skyblue;
+$loading-btn: yellowgreen;
+$error-btn: crimson;
+
+/* button mixin */
+@mixin notice-btn{
+    font-size: 16px;
+    width: 120px;
+    margin: 10px;
+    padding: 7px;
+    background-color: #fff; //배경색은 기본적으로 투명색
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.35s;
+    &.complete:hover{
+        background-color: $complete-btn;
+        color: #fff;
+    }
+    &.loading:hover{
+        background-color: $loading-btn;
+        color: #fff;
+    }
+    &.error:hover{
+        background-color: $error-btn;
+        color: #fff;
+    }
+}
+
+.complete{
+    @include notice-btn;
+    border: 3px solid $complete-btn;
+    color: $complete-btn;
+}
+.loading{
+    @include notice-btn;
+    border: 3px solid $loading-btn;
+    color: $loading-btn;
+}
+.error{
+    @include notice-btn;
+    border: 3px solid $error-btn;
+    color: $error-btn;
+}
