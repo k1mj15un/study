@@ -37,7 +37,7 @@
 231130 : scss기초이론, gsap02(scroll effect) <br>
 <br>
 231201 : scss기초이론 <br>
-231202 : <br>
+231202 : scss기초이론(mixin, include)과 활용 <br>
 231203 : <br>
 231204 : <br>
 231205 : <br>
