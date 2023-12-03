@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap');
+
+$color: (
+    font-primary: #2d3436,
+    font-secondary: #636e72,
+    font-focus: #0984e3,
+    bgc-primary: #dfe6e9,
+    bgc-secondary: #b2bec3
+);
+$headline-font: (
+    headline-font-large: 45px,
+    headline-font-medium: 32px,
+    headline-font-small: 22px
+);
+$font-family: (
+    kor: 'Noto Sans KR',
+    eng: 'Hedvig Letters Serif'
+);
+
+body{
+    background-color: map-get($color, bgc-primary);
+}
+.frame{
+    h1{
+        color: map-get($color, font-focus);
+        font-size: map-get($headline-font, headline-font-large);
+        font-family: map-get($font-family, eng);
+    }
+    h2{
+        color: map-get($color, font-primary);
+        font-size: map-get($headline-font, headline-font-medium);
+    }
+    h3{
+        color: map-get($color, font-secondary);
+        font-size: map-get($headline-font, headline-font-small);
+    }
+}
