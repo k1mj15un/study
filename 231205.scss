@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+@mixin links($link, $visited, $active, $hover){
+    a{
+        text-decoration: none;
+        color: $link;
+        &:visited{
+            color: $visited;
+        }
+        &:active{
+            color: $active;
+        }
+        &:hover{
+            color: $hover;
+            text-decoration: underline;
+        }
+    }
+}
+
+.btn{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include links(black, crimson, yellowgreen, royalblue); /* mixin 안에 a{}가 들어가있어서 중복되기 때문에 a{}안에 넣으면 안된다 */
+}
