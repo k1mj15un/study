@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap');
+
+$font-base: 15px;
+$font-family-base: 'Noto Sans KR';
+$font-family-headline: 'Hedvig Letters Serif';
+
+@mixin font-default {
+    font: {
+        size: $font-base; /* *2 등 자유롭게 사용 가능 */
+        weight: 300;
+        family: $font-family-base;
+    }
+    line-height: 1.6em;
+}
+
+@mixin font-headline{
+    font: {
+        family: $font-family-headline;
+        weight: 500;
+    }
+    text-transform: capitalize;
+}
+// 중첩 mixin
+@mixin large-headline{
+    @include font-headline;
+    font-size: $font-base * 3;
+    color: crimson;
+}
+@mixin medium-headline{
+    @include font-headline;
+    font-size: $font-base * 2;
+    color: yellowgreen;
+}
+@mixin small-headline{
+    @include font-headline;
+    font-size: $font-base * 1.2;
+    color: royalblue;
+}
+
+body{
+    @include font-default;
+}
+h1{
+    @include large-headline;
+}
+h2{
+    @include medium-headline;
+}
+h3{
+    @include small-headline;
+}
