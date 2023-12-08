@@ -1,0 +1,82 @@
+/*
+@mixin circle{
+    border: 5px solid #000;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: inline-block;
+}
+*/
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* mixin, include */
+/*
+.items{
+    div{
+        @include circle;
+        &:nth-child(1){
+            background-color: royalblue;
+        }
+        &:nth-child(2){
+            background-color: yellowgreen;
+        }
+        &:nth-child(3){
+            background-color: crimson;
+        }
+    }
+}
+*/
+
+/* extend */
+/*
+.circle{
+    border: 5px solid #000;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.items{
+    div{
+        @extend .circle;
+        &:nth-child(1){
+            background-color: royalblue;
+        }
+        &:nth-child(2){
+            background-color: yellowgreen;
+        }
+        &:nth-child(3){
+            background-color: crimson;
+        }
+    }
+}
+*/
+
+/* placeholder % */
+%circle{
+    border: 5px solid #000;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.items{
+    div{
+        @extend %circle;
+        &:nth-child(1){
+            background-color: royalblue;
+        }
+        &:nth-child(2){
+            background-color: yellowgreen;
+        }
+        &:nth-child(3){
+            background-color: crimson;
+        }
+    }
+}
