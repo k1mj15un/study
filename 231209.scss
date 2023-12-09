@@ -1,0 +1,45 @@
+body{
+    background-color: #222;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.heart-beat{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #ff4757;
+    transform: rotate(45deg);
+    box-shadow: 0 -10px 100px #ff4757,
+                0 -10px 150px #ff4757,
+                0 -10px 200px #ff4757;
+    animation: heart-beat 0.5s linear infinite;
+    &::before,
+    &::after{
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-color: #ff4757;
+        border-radius: 50%;
+    }
+    &::before{
+        top: -50%;
+    }
+    &::after{
+        left: -50%;
+    }
+    @keyframes heart-beat{ //scss애서는 keyframes를 독립적인 존재로 인식하기 때문에 어디에 넣어도 상관없다.
+        0%{
+            transform: rotate(45deg) scale(1);
+        }
+        50%{
+            transform: rotate(45deg) scale(1.05);
+        }
+        100%{
+            transform: rotate(45deg) scale(0.95);
+        }
+    }
+}

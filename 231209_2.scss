@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+$logo-family: "Noto Sans KR";
+$logo-weight: 500;
+$logo-width: 150px;
+$logo-color: #222;
+$logo-spacing: 3px;
+
+body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.figma{
+    width: $logo-width;
+    > span{
+        text-align: center;
+        display: block;
+        margin-bottom: 5px;
+        font-family: $logo-family;
+        font-weight: $logo-weight;
+        color: $logo-color;
+        font-size: $logo-width / 3; //width가 바뀌어도 유동적으로 변동된다.
+        letter-spacing: $logo-spacing;
+    }
+    .shape{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        span{ //grid를 선언함으로써 block요소로 바뀜
+            width: $logo-width / 2;
+            height: $logo-width / 2;
+            &:nth-child(1){
+                background-color: #f24e1e;
+                border-radius: 50% 0 0 50%;
+            }
+            &:nth-child(2){
+                background-color: #ff7262;
+                border-radius: 0 50% 50% 0;
+            }
+            &:nth-child(3){
+                background-color: #a259ff;
+                border-radius: 50% 0 0 50%;
+            }
+            &:nth-child(4){
+                background-color: #1abcfe;
+                border-radius: 50%;
+            }
+            &:nth-child(5){
+                background-color: #0acf83;
+                border-radius: 50% 0 50% 50%;
+            }
+        }
+    }
+}
