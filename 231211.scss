@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login{
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    h1{
+        font-weight: normal;
+        text-align: center;
+        font-size: 28px;
+        margin-top: 0;
+    }
+    input:not([type=submit]){
+        display: block; //기본적으로 block이 되면 width값이 100%가 되지만 예외가 input과 button이다.
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+        transition: 0.35s;
+        padding-left: 35px;
+        &[type=text]{
+            background: url(img/icon-user.svg) no-repeat center left 5px;
+        }
+        &[type=password]{
+            background: url(img/icon-password.svg) no-repeat center left 5px;
+        }
+        &[type=email]{
+            background: url(img/icon-email.svg) no-repeat center left 5px;
+        }
+        &:hover{
+            border: 1px solid skyblue;
+            box-shadow: 0 0 5px skyblue;
+        }
+        &:focus::placeholder{
+            visibility: hidden;
+        }
+    }
+    input[type=submit]{
+        background-color: skyblue;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        padding: 12px;
+        color: #fff;
+        cursor: pointer;
+        &:hover{
+            background-color: #000;
+        }
+    }
+}
