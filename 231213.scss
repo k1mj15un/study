@@ -1,0 +1,112 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* Map-get */
+$font-family: (
+    kor: 'Noto Sans KR',
+    eng: 'Monteserrat'
+);
+$font-color: (
+    primary: #222,
+    secondary: #555
+);
+$font-size: (
+    base: 15px,
+    large-heading: 60px,
+    medium-heading: 45px,
+    small-heading: 20px
+);
+$bg-color: (
+    primary: #fff,
+    secondary: #f8f8f8
+);
+$btn-color: (
+    pc: crimson,
+    mobile: royalblue
+);
+
+/* Mixin */
+@mixin wavy-underline{
+    text-decoration-style: wavy;
+    text-decoration-color: #e84393;
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 15px; //언더라인과 글자와의 간격
+}
+
+/* Default CSS */
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+button, input{
+    outline: none;
+}
+button{
+    cursor: pointer;
+}
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.5em;
+    margin-top: 0;
+    font-weight: normal;
+}
+body{
+    font-family: map-get($font-family, kor);
+    color: map-get($font-color, primary);
+    font-size: map-get($font-size, base);
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+    background-color: map-get($bg-color, primary);
+}
+
+/* Section: Portfolio */
+.portfolio{
+    height: 100vh;
+    background: url(img/background.png) no-repeat top center;
+    display: grid;
+    justify-content: center;
+    /* align-items: center; 자식요소가 하나일 때는 완벽하게 가운데에 오지만 여러개일 경우에는 자식요소들 사이에 갭이 커진다*/ 
+    align-content: center; /* grid에서는 align-item 보다 이걸 쓰는게 좋음 */
+    .headline-share{
+        margin-bottom: 50px;
+        h1{
+            @include wavy-underline;
+            font-family: map-get($font-family, eng);
+            font-size: map-get($font-size, large-heading);
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+    .items{
+        width: 1280px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 30px;
+        .item{
+            &.thum{
+                .photo{
+                    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+                    border-radius: 15px;
+                    width: 100%;
+                    height: 400px;
+                    overflow: hidden;
+                    img{
+                        width: inherit;
+                        height: inherit;
+                        object-fit: cover;
+                        object-position: top;
+                        transition: 2s;
+                    }
+                }
+                &:hover img{
+                    object-position: bottom;
+                }
+            }
+        }
+    }
+}
