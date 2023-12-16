@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotion-Section03</title>
+    <link rel="stylesheet" href="section3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+</head>
+<body>
+    <section id="section3">
+        <div class="items">
+            <h2>카드리뷰로 보는 &lt;프로젝트 헤일메리&gt;</h2>
+            <div class="swiper-container">
+                <!-- 각 슬라이드들을 래핑하는 부분 -->
+                <div class="swiper-wrapper">
+                    <!-- 각각의 슬라이드 시작 -->
+                    <div class="swiper-slide s1">
+                        <div class="item">
+                            <img src="images/slide1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s2">
+                        <div class="item">
+                            <img src="images/slide2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s3">
+                        <div class="item">
+                            <img src="images/slide3.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s4">
+                        <div class="item">
+                            <img src="images/slide4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s5">
+                        <div class="item">
+                            <img src="images/slide5.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s6">
+                        <div class="item">
+                            <img src="images/slide6.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s7">
+                        <div class="item">
+                            <img src="images/slide7.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s8">
+                        <div class="item">
+                            <img src="images/slide8.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s9">
+                        <div class="item">
+                            <img src="images/slide9.png" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide s10">
+                        <div class="item">
+                            <img src="images/slide10.png" alt="">
+                        </div>
+                    </div>
+                    <!-- 각각의 슬라이드 끝 -->
+                </div>
+                <!-- 슬라이드 아래에 페이지 표시를 위한 부분 -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- Swiper 컨테이너 끝 -->
+        </div>
+    </section>
+
+    <script>
+        // 스와이퍼 인스턴스를 생성합니다.
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',  // 페이지네이션 요소를 설정합니다.
+            effect: 'coverflow',               // 스와이퍼 효과로 'coverflow'를 사용합니다.
+            grabCursor: true,                  // 마우스 커서를 그랩 스타일로 변경합니다.
+            centeredSlides: true,              // 활성 슬라이드를 가운데에 표시합니다.
+            loop: true,                        // 무한 반복 모드를 활성화합니다.
+            paginationClickable: true,         // 페이지네이션 버튼을 클릭할 수 있게 합니다.
+            slidesPerView: 2,                  // 한 번에 두 개의 슬라이드를 표시합니다.
+
+            // coverflow 효과에 대한 설정
+            coverflow: {
+                rotate: 0,                     // 슬라이드 회전 각도를 설정합니다.
+                stretch: 300,                  // 슬라이드 사이의 거리를 설정합니다.
+                depth: 100,                    // 슬라이드의 Z축 거리(깊이)를 설정합니다.
+                modifier: 1,                   // 효과의 수정자 값을 설정합니다.
+                slideShadows: false            // 슬라이드 그림자를 비활성화합니다.
+            }
+        });
+    </script>
+</body>
+</html>

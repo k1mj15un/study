@@ -1,0 +1,73 @@
+/* font */
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #fff;
+}
+#section3{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    background-color: #FF7535;
+}
+#section3::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 435px;
+    background-color: #fff;
+}
+.items{
+    width: 1200px;
+    padding: 120px 20px;
+    text-align: center;
+}
+.items h2{
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
+
+/* 스와이퍼 컨테이너 스타일 설정 */
+
+.swiper-wrapper{
+    z-index: 10;
+    position: relative;
+}
+.swiper-container {
+    width:1160px;                    /* 컨테이너의 너비 설정 */
+    padding-bottom: 50px;            /* 하단 패딩 설정 */
+}
+.swiper-wrapper{
+    z-index: 10;
+    position: relative;
+}
+/* 스와이퍼 내부 아이템 스타일 설정 */
+.swiper-slide .item {
+    display: flex;                   /* flex 디스플레이로 설정 (아이템들을 가로로 배열) */
+    flex-direction: row;             /* 아이템들을 가로 방향으로 배열 */
+    overflow: hidden;                /* 내용이 넘치면 숨김 처리 */
+}
+/* 스와이퍼 내부 각 div 스타일 설정 */
+.swiper-slide .item img {
+    width: 500px;                    /* div의 너비 설정 */
+    height: 500px;                   /* div의 높이 설정 */
+}
