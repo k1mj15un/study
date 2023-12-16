@@ -1,0 +1,72 @@
+/* font */
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #222;
+}
+#section4{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+.items{
+    width: 1200px;
+    padding: 120px 20px;
+    text-align: center;
+}
+.content-container{
+    position: relative;
+    width: 100%;
+}
+.content{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1146px;
+    padding: 60px;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: #fff;
+    text-align: center;
+}
+.content::before{
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 30px;
+    background-color: #b8bbff;
+    z-index: -1;
+}
+.content h3{
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #1e2285;
+}
+.content h3:nth-of-type(3){
+    margin-bottom: 60px;
+}
+.content p{
+    color: #000;
+    font-size: 15px;
+    line-height: 1.5em;
+}
