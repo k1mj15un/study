@@ -1,0 +1,133 @@
+/* font */
+@font-face {
+    font-family: 'TmonMonsori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    color: #222;
+}
+a{
+    color: #222;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5em;
+    margin-top: 0;
+    font-weight: normal;
+}
+#section5{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: auto;
+}
+.items{
+    width: 1200px;
+    padding: 120px 20px;
+}
+.headline{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.headline h2{
+    font-family: 'TmonMonsori';
+    font-size: 50px;
+    color: #1e2285;
+}
+.headline img{
+    position: absolute;
+    left: 46%;
+    top: -280px;
+    transform: translateX(-50%);
+}
+.writer{
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+    margin-bottom: 60px;
+}
+.writer .photo{
+    width: 40%;
+    margin-right: 10px;
+}
+.writer .photo img{
+    width: 450px;
+    height: 530px;
+}
+.writer .desc{
+    width: 60%;
+    margin-left: 10px;
+}
+.writer .desc .name h3,
+.translator .name h3{
+    position: relative;
+    font-family: 'TmonMonsori';
+    font-size: 32px;
+    font-weight: 700;
+    /* margin-bottom: 40px;
+    border-bottom: 6px solid #000;
+    border-radius: 5px;
+    border-width: 60%; */
+}
+.writer .desc .name h3::after,
+.translator .name h3::after{
+    content: '';
+    display: block;
+    width: 420px;
+    border-bottom: 6px solid #222;
+    border-radius: 3px;
+}
+.writer .desc .name span,
+.translator .name span{
+    font-size: 20px;
+}
+.writer .desc p,
+.translator .desc p{
+    line-height: 1.6em;
+    margin-bottom: 30px;
+}
+.btn{
+    display: inline-block;
+    width: 200px;
+    background-color: #1e2285;
+    border: 1px solid transparent;
+    padding: 24px 0;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: #fff;
+    color: #1e2285;
+    border: 1px solid #000;
+}
+
+.translator{
+    width: 100%;
+}
+.translator .desc{
+    width: 100%;
+    display: flex;
+}
+.translator .desc p{
+    width: 60%;
+}
+.translator .desc .button{
+    width: 40%;
+    text-align: right;
+}
