@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <style>
+        html{
+            font-size: 20px;
+        }
+        body{
+            font-size: 1rem;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        li{
+            list-style: none;
+        }
+        header{
+            background: #f6f5ef;
+            border-top: 2px solid #000;
+        }
+        header > div{
+            width: 54.5rem; /* 1090px */
+            margin: 0 auto;
+            position: relative;
+        }
+        header > div::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        header > div h1{
+            float: left;
+            padding: 1.1rem 0 1.2rem;
+        }
+        header > div h2{
+            display: none;
+        }
+        header > div nav{
+            float: right;
+            padding: 3.4rem 0 0 0;
+        }
+        header > div nav > ul > li{
+            float: left;
+        }
+        header > div nav > ul > li > a{
+            display: block;
+            font-size: 0.7rem;
+            color: #333;
+            padding: 0.75rem 1.25rem 0;
+            height: 2.6rem;
+            line-height: 100%;
+        }
+        header > div .spot{
+            position: absolute;
+            right: 2.25rem;
+            top: 1rem;
+        }
+        header > div .spot li{
+            float: left;
+            position: relative;
+        }
+        header > div .spot li a{
+            padding: 0 0.75rem;
+            font-size: 0.7rem;
+            color: #333;
+            line-height: 100%;
+        }
+        header > div .spot li ~ li a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-25%);
+            width: 1px;
+            height: 0.6rem;
+            background: #e5e5e5;
+        }
+        header > div .spot li:last-child a{
+            display: block;
+            width: 1.7rem;
+            height: 1.7rem;
+            padding: 0;
+            text-align: center;
+            line-height: 1.7rem;
+            font-size: 0;
+            color: transparent;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+        header > div .spot li:last-child a::after{
+            display: none;
+        }
+        header > div .spot li:last-child a::before{
+            content: '\e97a';
+            font-family: 'xeicon';
+            font-size: 1.2rem;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1><a href="#"><img src="img/logo.png" alt="starbucks"></a></h1>
+            <h2 class="hide">대메뉴</h2>
+            <nav>
+                <ul>
+                    <li><a href="#">COFFEE</a></li>
+                    <li><a href="#">COFFEE</a></li>
+                    <li><a href="#">STORE</a></li>
+                    <li><a href="#">RESPONSIBILITY</a></li>
+                    <li><a href="#">MY STARBUCKS REWARDS</a></li>
+                    <li><a href="#">WHAT'S NEW</a></li>
+                </ul>
+            </nav>
+            <ul class="spot">
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">My Starbucks</a></li>
+                <li><a href="#">Costomer Service &amp; Ideas</a></li>
+                <li><a href="#">Find a Store</a></li>
+                <li><a href="#">검색</a></li>
+            </ul>
+    </header>
+</body>
+</html>
