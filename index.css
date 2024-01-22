@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+html{
+    font-size: 20px;
+}
+body{
+    background: #4621ad;
+    font-size: 1rem;
+    margin: 0;
+}
+h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 12.35rem;
+    height: 5.2rem;
+    background: url(./img/Pc_logo.png) no-repeat center / 4.75rem auto #fff;
+    border-radius: 0 0 1.125rem 1.125rem;
+}
+header{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 64.45rem;
+    padding: 7.4rem 0 0;
+}
+header nav ul{
+    display: flex;
+}
+header nav ul li{
+    padding: 0 3rem 0 0;
+}
+header nav ul a{
+    position: relative; /* 밑줄이 글자 크기에 딱 맞게 하려면 inline-block */
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #c6c6d4;
+    transition: all 0.3s;
+}
+header nav ul a:hover{
+    color: #fff;
+}
+header nav ul a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.125rem;
+    height: 0.15rem;
+    background: #fff;
+    transition: all 0.3s;
+    transform: translateY(0.5rem);
+    opacity: 0;
+}
+header nav ul a:hover::after{
+    transform: translateY(0);
+    opacity: 1;
+}
+header .search,
+header .btn_menu,
+header .btn_alarm{
+    display: none;
+}
